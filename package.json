@@ -17,7 +17,12 @@
     "lint:fix": "next lint --fix",
     "preview": "next build && next start",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prerun": "pnpm i && pnpm format:fix && pnpm lint && pnpm typecheck"
+  },
+  "engines": {
+    "node": ">=20.14.0",
+    "pnpm": ">=9.12.3"
   },
   "dependencies": {
     "@clerk/localizations": "^3.7.3",

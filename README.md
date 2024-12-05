@@ -9,6 +9,41 @@ Obendrein kannst du Trivia-Wissen zu den Top-Antworten **lernen**. Es ist also m
 
 ## Spielregeln
 
+In der einfachen Variante gibt es eine feste Anzahl von Fragen, deren Antwort einen Hinweis auf die Top-Antwort gibt, die du finden musst. Dafür hast du insgesamt nur _30 Sekunden Zeit_!  
+Die Antworten auf die einzelnen Fragen werden dir natürlich nicht angezeigt. Da musst du schon selbst drauf kommen.
+
+Beispiel:
+
+| Nr. | Frage                                                                              |
+| --- | ---------------------------------------------------------------------------------- |
+| 1   | Was ist die nationale Blume Japans?                                                |
+| 2   | Wie viele rote Streifen sind auf der US-Flagge?                                    |
+| 3   | Der Baum welches Steinobsts wird etwa 30 - 90 Jahre alt?                           |
+| 4   | Was ist das Nationaltier Australiens?                                              |
+| 5   | Der wievielte Monat ist der Juli?                                                  |
+| 6   | Welcher Gattung gehört die Schattenmorelle an?                                     |
+| 7   | Wie lautet das Ergebnis von 115514 / 16502?                                        |
+| 8   | Wie viele Ecken hat ein Oktaeder?                                                  |
+| 9   | "Geltung für Auslandstaten in anderen Fällen" ist der wievielte Paragraph im StGB? |
+| 10  | Wie heißt der Schwestersender von Sat.1?                                           |
+
+Die Top-Antwort ist **7** und ist damit die richtige Antwort. Hier sind die Antworten auf die Fragen:
+
+1. Kirschblüte
+2. 7
+3. Kirsche
+4. Rotes Känguru
+5. 7
+6. (Sauer)kirsche
+7. 7
+8. 8
+9. 7
+10. (Pro)Sieben
+
+---
+
+Manchmal kann es sein, dass du recht schnell auf die Top-Antwort kommst, weil kleine Hinweise versteckt sind. Manchmal aber können die Fragen so komplex sein, dass sie dich aufhalten wollen, oder die ersten Antworten führen dich auf eine falsche Fährte - es ist also Cleverness gefragt!
+
 ## Tech Stack
 
 ### Frontend

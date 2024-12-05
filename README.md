@@ -42,7 +42,7 @@ Die Top-Antwort ist **7** und ist damit die richtige Antwort. Hier sind die Antw
 
 ---
 
-Manchmal kann es sein, dass du recht schnell auf die Top-Antwort kommst, weil kleine Hinweise versteckt sind. Manchmal aber können die Fragen so komplex sein, dass sie dich aufhalten wollen, oder die ersten Antworten führen dich auf eine falsche Fährte - es ist also Cleverness gefragt!
+Manchmal kann es sein, dass du recht schnell auf die Top-Antwort kommst, weil kleine Hinweise versteckt sind. Manchmal aber können die Fragen so komplex sein, dass sie dich aufhalten wollen, oder die ersten Antworten führen dich auf eine falsche Fährte - es ist also Cleverness gefragt! Um auf die Top-Antwort zu kommen, musst du also wirklich genau hinsehen und denken. Du musst nicht jede Frage wirklich beantworten können - manchmal reicht auch deine Intuition.
 
 ## Tech Stack
 

@@ -1,16 +1,20 @@
+import { auth, currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 
 import { LatestPost } from "~/app/_components/post";
-import { auth } from "~/server/auth";
+import { getUsername } from "~/server/auth/helpers";
 import { api, HydrateClient } from "~/trpc/server";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
   const session = await auth();
+  const user = await currentUser();
 
-  if (session?.user) {
+  if (user?.id) {
     void api.post.getLatest.prefetch();
   }
+
+  const username = getUsername(user);
 
   return (
     <HydrateClient>
@@ -50,7 +54,7 @@ export default async function Home() {
 
             <div className="flex flex-col items-center justify-center gap-4">
               <p className="text-center text-2xl text-white">
-                {session && <span>Logged in as {session.user?.name}</span>}
+                {user && <span>Logged in as {username}</span>}
               </p>
               <Link
                 href={session ? "/api/auth/signout" : "/api/auth/signin"}
@@ -61,7 +65,7 @@ export default async function Home() {
             </div>
           </div>
 
-          {session?.user && <LatestPost />}
+          {user && <LatestPost />}
         </div>
       </main>
     </HydrateClient>

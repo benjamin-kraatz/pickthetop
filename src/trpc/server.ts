@@ -1,9 +1,11 @@
 import "server-only";
 
 import { createHydrationHelpers } from "@trpc/react-query/rsc";
-import { headers } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { cache } from "react";
 
+import { getAuth } from "@clerk/nextjs/server";
+import { NextRequest } from "next/server";
 import { createCaller, type AppRouter } from "~/server/api/root";
 import { createTRPCContext } from "~/server/api/trpc";
 import { createQueryClient } from "./query-client";
@@ -13,11 +15,14 @@ import { createQueryClient } from "./query-client";
  * handling a tRPC call from a React Server Component.
  */
 const createContext = cache(async () => {
-  const heads = new Headers(await headers());
-  heads.set("x-trpc-source", "rsc");
-
+  const heads = await headers();
+  const cooks = await cookies();
   return createTRPCContext({
-    headers: heads,
+    headers: new Headers({
+      cookie: cooks.toString(),
+      "x-trpc-source": "rsc",
+    }),
+    auth: getAuth(new NextRequest("https://notused.com", { headers: heads })),
   });
 });
 
@@ -26,5 +31,5 @@ const caller = createCaller(createContext);
 
 export const { trpc: api, HydrateClient } = createHydrationHelpers<AppRouter>(
   caller,
-  getQueryClient
+  getQueryClient,
 );

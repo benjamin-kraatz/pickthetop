@@ -2,7 +2,7 @@
 
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { startTransition, useState } from "react";
 import { toast } from "sonner";
 import { PauseTimer } from "~/components/game/pause-timer";
 import { QuestionsTable } from "~/components/game/questions-table";
@@ -11,6 +11,7 @@ import Tooltipped from "~/components/Tooltipped";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { exampleRounds } from "~/lib/game-types";
+import { validateAnswer } from "~/lib/quiz/answers";
 
 export default function GamePage() {
   const router = useRouter();
@@ -46,6 +47,7 @@ export default function GamePage() {
       className: "bg-orange-600 text-white",
     });
     resetGame();
+    router.push("/game/end");
   };
 
   const handlePauseTimeUp = () => {
@@ -68,11 +70,7 @@ export default function GamePage() {
   };
 
   const handleAnswerSubmit = (answer: string) => {
-    const normalizedAnswer = answer.toLowerCase().trim();
-    const normalizedTopAnswers = round.topAnswers.map((a) =>
-      a.toLowerCase().trim(),
-    );
-    const correct = normalizedTopAnswers.includes(normalizedAnswer);
+    const correct = validateAnswer(answer, round);
 
     setLastAnswer(answer);
     setIsCorrect(correct);
@@ -99,12 +97,15 @@ export default function GamePage() {
   };
 
   const resetGame = () => {
-    setCurrentRound(0);
-    setIsPlaying(false);
-    setShowingResults(false);
-    setIsPaused(false);
-    setIsCorrect(false);
-    setAnswer("");
+    startTransition(() => {
+      setCurrentRound(0);
+      setIsPlaying(false);
+      setShowingResults(false);
+      setIsPaused(false);
+      setIsCorrect(false);
+      setAnswer("");
+    });
+    router.refresh();
   };
 
   return (

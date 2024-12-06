@@ -45,9 +45,7 @@ export default function GamePage() {
       description: `Die richtige Antwort wäre "${round.topAnswers[0]!}" gewesen.`,
       className: "bg-orange-600 text-white",
     });
-    setIsPlaying(false);
-    setIsPaused(false);
-    setAnswer("");
+    resetGame();
   };
 
   const handlePauseTimeUp = () => {

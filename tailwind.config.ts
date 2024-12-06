@@ -73,10 +73,28 @@ export default {
             height: "0",
           },
         },
+        glow: {
+          "0%, 100%": {
+            boxShadow: "0 0 8px 2px rgba(239, 68, 68, 0.2)",
+          },
+          "50%": {
+            boxShadow: "0 0 16px 4px rgba(239, 68, 68, 0.4)",
+          },
+        },
+        "glow-amber": {
+          "0%, 100%": {
+            boxShadow: "0 0 8px 2px rgba(217, 119, 6, 0.2)",
+          },
+          "50%": {
+            boxShadow: "0 0 16px 4px rgba(217, 119, 6, 0.4)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        glow: "glow 2s ease-in-out infinite",
+        "glow-amber": "glow-amber 2s ease-in-out infinite",
       },
     },
   },

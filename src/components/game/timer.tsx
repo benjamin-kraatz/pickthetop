@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Progress } from "~/components/ui/progress";
 import { getWordSecond } from "~/lib/grammar";
+import { cn } from "~/lib/utils";
 
 interface TimerProps {
   timeLimit: number;
@@ -18,6 +19,7 @@ export function Timer({
   isPaused = false,
 }: TimerProps) {
   const [timeLeft, setTimeLeft] = useState(timeLimit);
+  const isUrgent = timeLeft <= 4 && timeLeft > 0;
 
   useEffect(() => {
     if (!isActive || isPaused) {
@@ -45,11 +47,20 @@ export function Timer({
     <div className="w-full space-y-2">
       <div className="flex justify-between text-sm">
         <span>Zeit übrig:</span>
-        <span className="font-mono">
+        <span className={cn("font-mono", isUrgent && "text-destructive")}>
           {timeLeft} {getWordSecond(timeLeft)}
         </span>
       </div>
-      <Progress value={progress} className="h-2" />
+      <Progress
+        value={progress}
+        className={cn(
+          "h-2",
+          isUrgent && [
+            "animate-pulse duration-700 bg-destructive",
+            "animate-glow"
+          ]
+        )}
+      />
     </div>
   );
 }

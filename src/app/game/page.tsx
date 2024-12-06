@@ -17,6 +17,9 @@ export default function GamePage() {
   const [currentRound, setCurrentRound] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [answer, setAnswer] = useState("");
+  const [showingResults, setShowingResults] = useState(false);
+  const [lastAnswer, setLastAnswer] = useState("");
+  const [isCorrect, setIsCorrect] = useState(false);
 
   const [isPaused, setIsPaused] = useState(false);
   const [canPause, setCanPause] = useState(true);
@@ -37,44 +40,6 @@ export default function GamePage() {
     );
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!answer) return;
-
-    const hasMoreRounds = currentRound < exampleRounds.length - 1;
-
-    const normalizedAnswer = answer.toLowerCase().trim();
-    const normalizedTopAnswers = round.topAnswers.map((a) =>
-      a.toLowerCase().trim(),
-    );
-    const isInTopAnswers = normalizedTopAnswers.includes(normalizedAnswer);
-
-    if (isInTopAnswers) {
-      toast.success("Richtig", {
-        description: "Du hast die Top-Antwort gefunden!",
-        className: "bg-green-600 text-white",
-      });
-      setIsPlaying(false);
-      setIsPaused(false);
-      if (currentRound < exampleRounds.length - 1) {
-        setCurrentRound((prev) => prev + 1);
-      }
-    } else {
-      toast.error("Falsch", {
-        description: `Die richtige Antwort wäre "${round.topAnswers[0]!}" gewesen.`,
-        className: "bg-red-600 text-white",
-      });
-      setIsPlaying(false);
-      setIsPaused(false);
-    }
-
-    if (!hasMoreRounds) {
-      router.push("/game/end");
-    }
-    setAnswer("");
-  };
-
   const handleTimeUp = () => {
     toast.error("Zeit abgelaufen!", {
       description: `Die richtige Antwort wäre "${round.topAnswers[0]!}" gewesen.`,
@@ -94,6 +59,7 @@ export default function GamePage() {
   };
 
   const startGame = () => {
+    setShowingResults(false);
     setIsPlaying(true);
     setIsPaused(false);
     setAnswer("");
@@ -101,6 +67,46 @@ export default function GamePage() {
 
   const togglePause = () => {
     setIsPaused(!isPaused);
+  };
+
+  const handleAnswerSubmit = (answer: string) => {
+    const normalizedAnswer = answer.toLowerCase().trim();
+    const normalizedTopAnswers = round.topAnswers.map((a) =>
+      a.toLowerCase().trim(),
+    );
+    const correct = normalizedTopAnswers.includes(normalizedAnswer);
+
+    setLastAnswer(answer);
+    setIsCorrect(correct);
+    setShowingResults(true);
+    setIsPlaying(false);
+
+    if (!correct) {
+      toast.error("Das war leider falsch!", {
+        description: "Das Spiel ist vorbei. Du kannst von vorne starten",
+      });
+      setTimeout(() => {
+        resetGame();
+        router.refresh();
+      }, 5000);
+      return;
+    }
+
+    if (currentRound === exampleRounds.length - 1) {
+      toast.success("Glückwunsch! Du hast alle Runden geschafft!");
+      router.push("/");
+      return;
+    }
+    setCurrentRound((prev) => prev + 1);
+  };
+
+  const resetGame = () => {
+    setCurrentRound(0);
+    setIsPlaying(false);
+    setShowingResults(false);
+    setIsPaused(false);
+    setIsCorrect(false);
+    setAnswer("");
   };
 
   return (
@@ -125,66 +131,126 @@ export default function GamePage() {
         />
 
         <PauseTimer
-          timeLimit={15}
+          timeLimit={8}
           isActive={isPaused}
           onTimeUp={handlePauseTimeUp}
         />
 
-        {isPlaying && !isPaused && (
-          <QuestionsTable questions={round.questions} />
-        )}
-        {(!isPlaying || isPaused) && (
-          <div className="flex min-h-[415px] border-separate flex-col items-center justify-center rounded-md border text-center">
-            <span className="text-sm font-semibold">
-              {!isPlaying
-                ? "Starte das Spiel, um die Fragen zu sehen."
-                : "Timer pausiert. Klicke auf das Auge, um die Fragen wieder zu sehen."}
-            </span>
+        {showingResults ? (
+          <div className="space-y-4 rounded-lg border p-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-xl font-semibold">
+                {isCorrect ? "Richtig!" : "Falsch!"}
+              </h2>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-muted-foreground">
+                  Deine Antwort:
+                </span>
+                <span
+                  className={`rounded px-4 py-0.5 ${
+                    isCorrect
+                      ? "bg-green-100 font-medium text-green-700"
+                      : "bg-red-100 font-medium text-red-700"
+                  }`}
+                >
+                  {lastAnswer}
+                </span>
+              </div>
+            </div>
+
+            {!isCorrect && (
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-muted-foreground">
+                  Richtige Antworten:
+                </span>
+                <div className="flex gap-2">
+                  {round.topAnswers.map((answer) => (
+                    <span
+                      key={answer}
+                      className="rounded bg-green-100 px-2 py-0.5 font-medium text-green-700"
+                    >
+                      {answer}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <QuestionsTable
+              questions={round.questions}
+              showAnswers
+              topAnswers={round.topAnswers}
+            />
           </div>
+        ) : (
+          ((!isPlaying || isPaused) && (
+            <div className="flex min-h-[415px] border-separate flex-col items-center justify-center rounded-md border text-center">
+              <span className="text-sm font-semibold">
+                {!isPlaying
+                  ? "Starte das Spiel, um die Fragen zu sehen."
+                  : "Timer pausiert. Klicke auf das Auge, um die Fragen wieder zu sehen."}
+              </span>
+            </div>
+          )) || <QuestionsTable questions={round.questions} />
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="flex gap-2">
-            <Input
-              placeholder="Deine Antwort..."
-              value={answer}
-              onChange={(e) => setAnswer(e.target.value)}
-              disabled={!isPlaying}
-              className="flex-1"
-            />
-            {isPlaying && (
-              <Tooltipped text="Pausieren, um Antwort einzugeben">
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="icon"
-                  onClick={togglePause}
-                  disabled={!isPlaying || !canPause}
-                >
-                  {isPaused ? (
-                    <EyeIcon className="h-4 w-4" />
-                  ) : (
-                    <EyeOffIcon className="h-4 w-4" />
-                  )}
-                </Button>
-              </Tooltipped>
-            )}
-          </div>
-          {isPlaying ? (
+        {isPlaying && (
+          <form
+            onSubmit={() => handleAnswerSubmit(answer)}
+            className="space-y-4"
+          >
+            <div className="flex gap-2">
+              <Input
+                placeholder="Deine Top-Antwort..."
+                value={answer}
+                onChange={(e) => setAnswer(e.target.value)}
+                disabled={!isPlaying}
+                className="flex-1"
+              />
+              {isPlaying && (
+                <Tooltipped text="Pausieren, um Top-Antwort einzugeben">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="icon"
+                    onClick={togglePause}
+                    disabled={!isPlaying || !canPause}
+                  >
+                    {isPaused ? (
+                      <EyeIcon className="h-4 w-4" />
+                    ) : (
+                      <EyeOffIcon className="h-4 w-4" />
+                    )}
+                  </Button>
+                </Tooltipped>
+              )}
+            </div>
             <Button type="submit" className="w-full" disabled={!answer}>
               Antwort einreichen
             </Button>
-          ) : (
-            <Button
-              type="button"
-              onClick={startGame}
-              className="w-full"
-              variant="outline"
-            >
-              {currentRound === 0 ? "Spiel starten" : "Nächste Runde"}
-            </Button>
-          )}
-        </form>
+          </form>
+        )}
+
+        {!isPlaying && !showingResults && !isPaused && (
+          <Button
+            type="button"
+            onClick={startGame}
+            className="w-full"
+            variant="outline"
+          >
+            {currentRound === 0 ? "Spiel starten" : "Nächste Runde"}
+          </Button>
+        )}
+        {showingResults && !isPaused && !isPlaying && (
+          <Button
+            type="button"
+            onClick={startGame}
+            className="w-full"
+            variant="outline"
+          >
+            Weiter zur nächste Runde
+          </Button>
+        )}
       </div>
     </main>
   );

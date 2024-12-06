@@ -27,6 +27,19 @@ Beispiel:
 | 9   | "Geltung für Auslandstaten in anderen Fällen" ist der wievielte Paragraph im StGB? |
 | 10  | Wie heißt der Schwestersender von Sat.1?                                           |
 
+Du musst nun versuchen, die Top-Antwort zu finden, also die Antwort, die _am meisten_ vorkommt. Du musst nicht zwingend alle Fragen beantworten. Sobald du feststellst, dass eine Antwort häufiger vorkommt und du vermutest, dass sie die Top-Antwort ist, kannst du sie in das Textfeld eingeben.
+
+**ACHTUNG**: gibst du die falsche Lösung ein, ist das Spiel _sofort vorbei und verloren_!
+
+Du kannst die Top-Antwort unterhalb der Fragen-Tabelle in das Textfeld eingeben. Das Spiel prüft auf die _korrekte Schreibweise_ der Top-Antwort.  
+Die Groß- und Kleinschreibung muss nicht beachtet werden.
+
+Nehmen wir beispielsweise an, die Top-Antwort lautet _Karosserie_, so ist die Antwort _karosserie_ oder _KARossERiE_ auch korrekt. Falsch hingegen wäre _Karoserie_, da das Wort so nicht geschrieben wird.
+
+Noch ein Hinweis: die _meisten_ Lösungen/Top-Antworten sind einzelne Wörter. Sollten Artikel wie "der", "die", oder "das" vorkommen, kannst du sie einfach weglassen. Zahlen sind als Zahlwort oder einfach als Zahl geschrieben gültig.
+
+Lösung des Beispiels:
+
 Die Top-Antwort ist **7** und ist damit die richtige Antwort. Hier sind die Antworten auf die Fragen:
 
 1. Kirschblüte

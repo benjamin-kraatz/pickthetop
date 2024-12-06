@@ -55,6 +55,8 @@ Manchmal kann es sein, dass du recht schnell auf die Top-Antwort kommst, weil kl
 - tRPC
 - React 19
 
+Die Basis dafür bildet der [T3-Stack](https://create.t3.gg/).
+
 ### Backend (Multiplayer-Feature)
 
 _Das Repository zum Backend ist [hier](https://github.com/benjamin-kraatz/pickthetop_backend) zu finden_
@@ -85,7 +87,7 @@ pnpm prerun
 3. Setze die Umgebungsvariablen
 
 Kopiere die Datei `.env.example` in eine neue Datei `.env` und passe die Werte darin an.  
-Folgende Umgebungsvariablen sind notwendig (du benötigst einen [Clerk](https://clerk.com/)-Account und eine PostgreSQL-Datenbank):
+Folgende Umgebungsvariablen sind notwendig (du benötigst einen [Clerk](https://clerk.com/)-Account und eine [PostgreSQL-Datenbank]):
 
 ```bash
 DATABASE_URL=""
@@ -104,3 +106,11 @@ pnpm dev
 Öffne `http://localhost:3000` in deinem Browser.
 
 > Um die Multiplayer-Funktion zu verwenden, musst du das Backend starten. Das Repository zum Backend findest du [hier](https://github.com/benjamin-kraatz/pickthetop_backend).
+
+### Datenbank
+
+Wenn du Docker verwendest, kannst du die Datenbank mit [folgendem Befehl](./start-database.sh) starten:
+
+```bash
+sh ./start-database.sh
+```

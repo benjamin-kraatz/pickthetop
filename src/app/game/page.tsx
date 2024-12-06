@@ -1,19 +1,25 @@
 "use client";
 
+import { EyeIcon, EyeOffIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "sonner";
+import { PauseTimer } from "~/components/game/pause-timer";
 import { QuestionsTable } from "~/components/game/questions-table";
 import { Timer } from "~/components/game/timer";
-import { exampleRounds } from "~/lib/game-types";
+import Tooltipped from "~/components/Tooltipped";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
-import { toast } from "sonner";
-import { useRouter } from "next/navigation";
+import { exampleRounds } from "~/lib/game-types";
 
 export default function GamePage() {
   const router = useRouter();
   const [currentRound, setCurrentRound] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [answer, setAnswer] = useState("");
+
+  const [isPaused, setIsPaused] = useState(false);
+  const [canPause, setCanPause] = useState(true);
 
   const round = exampleRounds[currentRound];
 
@@ -50,6 +56,7 @@ export default function GamePage() {
         className: "bg-green-600 text-white",
       });
       setIsPlaying(false);
+      setIsPaused(false);
       if (currentRound < exampleRounds.length - 1) {
         setCurrentRound((prev) => prev + 1);
       }
@@ -59,6 +66,7 @@ export default function GamePage() {
         className: "bg-red-600 text-white",
       });
       setIsPlaying(false);
+      setIsPaused(false);
     }
 
     if (!hasMoreRounds) {
@@ -73,12 +81,26 @@ export default function GamePage() {
       className: "bg-orange-600 text-white",
     });
     setIsPlaying(false);
+    setIsPaused(false);
     setAnswer("");
+  };
+
+  const handlePauseTimeUp = () => {
+    setIsPaused(false);
+    setCanPause(false);
+    toast.info("Pausenzeit abgelaufen!", {
+      description: "Die Fragen sind jetzt wieder sichtbar.",
+    });
   };
 
   const startGame = () => {
     setIsPlaying(true);
+    setIsPaused(false);
     setAnswer("");
+  };
+
+  const togglePause = () => {
+    setIsPaused(!isPaused);
   };
 
   return (
@@ -99,24 +121,55 @@ export default function GamePage() {
           timeLimit={round.timeLimit}
           onTimeUp={handleTimeUp}
           isActive={isPlaying}
+          isPaused={isPaused}
         />
 
-        {isPlaying && <QuestionsTable questions={round.questions} />}
-        {!isPlaying && (
+        <PauseTimer
+          timeLimit={15}
+          isActive={isPaused}
+          onTimeUp={handlePauseTimeUp}
+        />
+
+        {isPlaying && !isPaused && (
+          <QuestionsTable questions={round.questions} />
+        )}
+        {(!isPlaying || isPaused) && (
           <div className="flex min-h-[415px] border-separate flex-col items-center justify-center rounded-md border text-center">
             <span className="text-sm font-semibold">
-              Starte das Spiel, um die Fragen zu sehen.
+              {!isPlaying
+                ? "Starte das Spiel, um die Fragen zu sehen."
+                : "Timer pausiert. Klicke auf das Auge, um die Fragen wieder zu sehen."}
             </span>
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <Input
-            placeholder="Deine Antwort..."
-            value={answer}
-            onChange={(e) => setAnswer(e.target.value)}
-            disabled={!isPlaying}
-          />
+          <div className="flex gap-2">
+            <Input
+              placeholder="Deine Antwort..."
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
+              disabled={!isPlaying}
+              className="flex-1"
+            />
+            {isPlaying && (
+              <Tooltipped text="Pausieren, um Antwort einzugeben">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  onClick={togglePause}
+                  disabled={!isPlaying || !canPause}
+                >
+                  {isPaused ? (
+                    <EyeIcon className="h-4 w-4" />
+                  ) : (
+                    <EyeOffIcon className="h-4 w-4" />
+                  )}
+                </Button>
+              </Tooltipped>
+            )}
+          </div>
           {isPlaying ? (
             <Button type="submit" className="w-full" disabled={!answer}>
               Antwort einreichen

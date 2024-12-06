@@ -1,0 +1,1 @@
+ALTER TABLE "ptt_user" ADD COLUMN "completed_setup" boolean DEFAULT false;

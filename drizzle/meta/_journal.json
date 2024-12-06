@@ -15,6 +15,20 @@
       "when": 1733479677882,
       "tag": "0001_long_toad_men",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1733481548890,
+      "tag": "0002_fine_tempest",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1733482555494,
+      "tag": "0003_melted_smiling_tiger",
+      "breakpoints": true
     }
   ]
 }

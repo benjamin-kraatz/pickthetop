@@ -8,6 +8,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 import { ThemeProvider } from "~/components/ui/theme-provider";
 import { TRPCReactProvider } from "~/trpc/react";
+import { Toaster } from "~/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Pick The Top - Das Mindgame",
@@ -33,6 +34,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <Toaster richColors position="top-center" />
             <TRPCReactProvider>{children}</TRPCReactProvider>
           </ThemeProvider>
         </body>

@@ -160,7 +160,7 @@ export default function GameShell({ roundId }: { roundId: string }) {
           <h1 className="text-2xl font-bold">Finde die Top-Antwort!</h1>
           <p className="text-muted-foreground">
             Finde die Antwort, die am häufigsten vorkommt. Du hast{" "}
-            {question.timeLimit} Sekunden Zeit!
+            <strong>{question.timeLimit} Sekunden</strong> Zeit!
           </p>
           <p className="text-sm font-semibold text-muted-foreground">
             Runde {currentRound + 2} von {question.questions.length}

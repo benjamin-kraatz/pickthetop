@@ -66,7 +66,7 @@ export default function LandingHeader() {
             src="demo_dark.png"
             width={1824}
             height={1080}
-            className="bg-white/2 absolute left-0 top-0 hidden w-[57rem] max-w-none rounded-md rounded-tl-lg border border-muted/20 p-3 ring-1 ring-white/10 dark:block"
+            className="bg-white/2 absolute left-0 top-0 hidden w-[57rem] max-w-none rounded-md rounded-tl-lg border border-muted/20 ring-1 ring-white/10 dark:block"
           />
           <img
             alt="App screenshot"

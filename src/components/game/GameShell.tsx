@@ -302,7 +302,7 @@ export default function GameShell({
                 className="flex-1"
               />
               {isPlaying && (
-                <Tooltipped text="Pausieren, um Top-Antwort einzugeben">
+                <Tooltipped text="Pausieren, um Zeit für die Eingabe der Top-Antwort zu gewinnen">
                   <Button
                     type="button"
                     variant="outline"

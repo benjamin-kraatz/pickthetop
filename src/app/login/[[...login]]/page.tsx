@@ -21,12 +21,12 @@ export default function Page() {
             Clerk
           </Link>{" "}
           verwaltet. Wir verknpüfen lediglich deine <code>userId</code> mit
-          deinen Spielständen. Innerhalb der Systeme von Pick The Top haben wir{" "}
-          <b>zu keinem Zeitpunkt Informationen</b> über deine E-Mail-Adresse
-          oder andere Geräte- oder Zugangsdaten. Nach der Anmeldung hast du über
-          den Nutzer-Button in der rechten oberen Ecke die Möglichkeit, dein
-          Konto zu verwalten, inklusive der Abmeldung und der Löschung deines
-          Kontos.
+          deinen Spielständen und speichern deine E-Mail-Adresse. Innerhalb der
+          Systeme von Pick The Top haben wir{" "}
+          <b>zu keinem Zeitpunkt Informationen</b> über Geräte- oder
+          Zugangsdaten. Nach der Anmeldung hast du über den Nutzer-Button in der
+          rechten oberen Ecke die Möglichkeit, dein Konto zu verwalten,
+          inklusive der Abmeldung und der Löschung deines Kontos.
         </p>
       </div>
     </div>

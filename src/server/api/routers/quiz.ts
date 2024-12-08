@@ -1,6 +1,7 @@
 import { eq, sql } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
+import { posthog } from "~/lib/analytics/server";
 import { getQuestions } from "~/lib/quiz/questions/actions";
 import { getNextRoundId } from "~/lib/quiz/utils";
 
@@ -51,6 +52,17 @@ export const quizRouter = createTRPCRouter({
       if (!answer) {
         return null;
       }
+
+      posthog.capture({
+        event: "quiz_answer",
+        distinctId: ctx.userId!,
+        properties: {
+          roundId: input.roundId,
+          questionId: input.questionId,
+          state: input.state,
+          timeLeft: input.timeLeft,
+        },
+      });
 
       // now, store the last game state for the user,
       // but only if the user has given the correct answer.

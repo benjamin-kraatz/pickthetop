@@ -11,6 +11,7 @@ import { type getAuth } from "@clerk/nextjs/server";
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
+import { posthog } from "~/lib/analytics/server";
 
 import { db } from "~/server/db";
 
@@ -127,6 +128,11 @@ export const protectedProcedure = t.procedure
     if (!ctx.userId) {
       throw new TRPCError({ code: "UNAUTHORIZED" });
     }
+
+    // identify the user on PostHog for client-side analytics.
+    // TODO: is this the best place to do this?
+    posthog.identify({ distinctId: ctx.userId });
+
     return next({
       ctx: {
         // infers the `session` as non-nullable

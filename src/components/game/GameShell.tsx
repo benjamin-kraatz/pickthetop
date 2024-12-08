@@ -2,7 +2,7 @@
 
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { startTransition, useState } from "react";
+import { startTransition, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { PauseTimer } from "~/components/game/pause-timer";
 import { QuestionsTable } from "~/components/game/questions-table";
@@ -18,13 +18,22 @@ import { api } from "~/trpc/react";
 export default function GameShell({
   game,
   roundId,
+  initialQuestionId,
 }: {
   game: GameRound[];
   roundId: string;
+  initialQuestionId?: string;
 }) {
+  const initialQuestionIndex = useMemo(() => {
+    if (!initialQuestionId) {
+      return undefined;
+    }
+    return game.findIndex((q) => q.id === initialQuestionId);
+  }, [game, initialQuestionId]);
+
   const router = useRouter();
   // start at -1 as we increment on pressing "play".
-  const [currentRound, setCurrentRound] = useState(-1);
+  const [currentRound, setCurrentRound] = useState(initialQuestionIndex ?? -1);
   const [isPlaying, setIsPlaying] = useState(false);
   const [answer, setAnswer] = useState("");
   const [showingResults, setShowingResults] = useState(false);

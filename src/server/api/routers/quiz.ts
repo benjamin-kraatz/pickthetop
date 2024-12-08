@@ -3,7 +3,7 @@ import { z } from "zod";
 import { getQuestions } from "~/lib/quiz/questions/actions";
 
 import { createTRPCRouter, protectedProcedure } from "~/server/api/trpc";
-import { quizAnswers } from "~/server/db/schema";
+import { gameStates, quizAnswers } from "~/server/db/schema";
 
 export const quizRouter = createTRPCRouter({
   getQuestions: protectedProcedure
@@ -45,6 +45,35 @@ export const quizRouter = createTRPCRouter({
           },
         })
         .returning();
+
+      if (!answer) {
+        return null;
+      }
+
+      // now, store the last game state for the user
+      await ctx.db
+        .insert(gameStates)
+        .values({
+          id: crypto.randomUUID(),
+          userId: ctx.userId!,
+          lastRoundId: input.roundId,
+          lastQuestionId: input.questionId,
+        })
+        .onConflictDoUpdate({
+          target: [gameStates.userId],
+          set: {
+            lastRoundId: input.roundId,
+            lastQuestionId: input.questionId,
+          },
+        });
+
       return answer;
     }),
+
+  getCurrentGameState: protectedProcedure.query(async ({ ctx }) => {
+    const gameState = await ctx.db.query.gameStates.findFirst({
+      where: (fields, { eq }) => eq(fields.userId, ctx.userId!),
+    });
+    return gameState;
+  }),
 });

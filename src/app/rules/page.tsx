@@ -1,3 +1,6 @@
+import { InfoIcon } from "lucide-react";
+import Link from "next/link";
+import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
 import {
   Table,
   TableCell,
@@ -18,6 +21,25 @@ export default function RulesPage() {
         Willkommen zu Pick The Top! Hier sind die detaillierten Regeln, um dir
         den Einstieg zu erleichtern.
       </p>
+      <div className="my-4 max-w-3xl">
+        <Alert>
+          <InfoIcon className="h-4 w-4" />
+          <AlertTitle>Aufgepasst!</AlertTitle>
+          <AlertDescription>
+            Diese Seite ist noch nicht vollständig. Es fehlen noch einige
+            Hinweise, Tipps und Beispiele.{" "}
+            <Link
+              href="https://github.com/benjamin-kraatz/pickthetop"
+              target="_blank"
+              className="underline"
+              rel="noreferrer noopener"
+            >
+              hilf doch mit
+            </Link>{" "}
+            und verbessere diese Seite für alle anderen Spieler.
+          </AlertDescription>
+        </Alert>
+      </div>
       <div className="w-full max-w-2xl rounded-lg px-2 shadow-md md:p-6">
         <h2 className="mb-4 text-2xl font-semibold">Spielübersicht</h2>
         <p className="mb-4">

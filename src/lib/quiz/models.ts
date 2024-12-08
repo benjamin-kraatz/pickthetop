@@ -1,10 +1,10 @@
-export interface Question {
+export type Question = {
   id: number;
   text: string;
   answer: string;
-}
+};
 
-export interface GameRound {
+export type GameRound = {
   id: string;
   questions: Question[];
 
@@ -12,4 +12,4 @@ export interface GameRound {
   // The validation always tolowercases the input.
   topAnswers: string[];
   timeLimit: number;
-}
+};

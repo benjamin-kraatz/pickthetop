@@ -1,6 +1,6 @@
 "use client";
 
-import { EyeIcon, EyeOffIcon, Loader2Icon } from "lucide-react";
+import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { startTransition, useState } from "react";
 import { toast } from "sonner";
@@ -10,10 +10,10 @@ import { Timer } from "~/components/game/timer";
 import Tooltipped from "~/components/Tooltipped";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
+import { type GameRound } from "~/lib/game-types";
 import { validateAnswer } from "~/lib/quiz/answers";
-import { api } from "~/trpc/react";
 
-export default function GameShell({ roundId }: { roundId: string }) {
+export default function GameShell({ game }: { game: GameRound[] }) {
   const router = useRouter();
   // start at -1 as we increment on pressing "play".
   const [currentRound, setCurrentRound] = useState(-1);
@@ -28,44 +28,7 @@ export default function GameShell({ roundId }: { roundId: string }) {
   const [isPaused, setIsPaused] = useState(false);
   const [canPause, setCanPause] = useState(true);
 
-  const { data: gameRound, isLoading } = api.quiz.getQuestions.useQuery(
-    {
-      roundId,
-    },
-    {
-      refetchOnWindowFocus: false,
-      refetchOnMount: false,
-      refetchOnReconnect: false,
-      refetchInterval: false,
-      refetchIntervalInBackground: false,
-    },
-  );
-
-  if (isLoading) {
-    return (
-      <main className="flex h-screen w-screen flex-col items-center justify-center gap-4">
-        <Loader2Icon className="h-6 w-6 animate-spin" />
-        <p className="text-muted-foreground">
-          Die Runden werden geladen. Bitte warte einen Moment.
-        </p>
-      </main>
-    );
-  }
-
-  if (!gameRound) {
-    return (
-      <main className="container space-y-8 py-6">
-        <div className="mx-auto max-w-2xl space-y-8">
-          <h1 className="text-2xl font-bold">Keine Runden mehr!</h1>
-          <p className="text-muted-foreground">
-            Du hast alle Runden beendet. Glückwunsch!
-          </p>
-        </div>
-      </main>
-    );
-  }
-
-  const question = gameRound[Math.max(currentRound, 0)];
+  const question = game[Math.max(currentRound, 0)];
 
   if (!question) {
     return (

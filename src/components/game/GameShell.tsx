@@ -69,10 +69,7 @@ export default function GameShell({
     if (!isPlaying) {
       return;
     }
-    console.log(">>> time up");
-    console.log(">A> time up");
-    console.log(">v> time up");
-    console.log("><> time up");
+
     toast.error("Zeit abgelaufen!", {
       description: `Die richtige Antwort wäre "${question.topAnswers[0]!}" gewesen.`,
       className: "bg-orange-600 text-white",

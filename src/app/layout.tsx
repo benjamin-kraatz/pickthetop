@@ -9,13 +9,15 @@ import { ClerkProvider, SignedIn, UserButton } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
 import { Github } from "lucide-react";
 import Link from "next/link";
+import { Suspense } from "react";
 import { Toaster } from "~/components/ui/sonner";
 import { ThemeProvider } from "~/components/ui/theme-provider";
 import { ThemeToggle } from "~/components/ui/theme-toggle";
 import { PHProvider } from "~/lib/analytics/posthog";
 import PostHogPageView from "~/lib/analytics/posthog-pageview";
 import { TRPCReactProvider } from "~/trpc/react";
-import { Suspense } from "react";
+
+export const experimental_ppr = true;
 
 export const metadata: Metadata = {
   title: "Pick The Top - Das Mindgame",

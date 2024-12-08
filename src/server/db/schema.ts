@@ -63,7 +63,11 @@ export const usersRelations = relations(users, ({ many, one }) => ({
 export const gameStates = createTable(
   "game_state",
   {
-    id: varchar("id", { length: 255 }).notNull().primaryKey(),
+    id: varchar("id", { length: 255 })
+      .notNull()
+      .primaryKey()
+      .$defaultFn(() => crypto.randomUUID()),
+
     startedAt: timestamp("started_at", {
       mode: "date",
       withTimezone: true,

@@ -50,22 +50,39 @@ export const quizRouter = createTRPCRouter({
         return null;
       }
 
-      // now, store the last game state for the user
-      await ctx.db
-        .insert(gameStates)
-        .values({
-          id: crypto.randomUUID(),
-          userId: ctx.userId!,
-          lastRoundId: input.roundId,
-          lastQuestionId: input.questionId,
-        })
-        .onConflictDoUpdate({
-          target: [gameStates.userId],
-          set: {
+      // now, store the last game state for the user,
+      // but only if the user has given the correct answer.
+      if (input.state === "correct") {
+        await ctx.db
+          .insert(gameStates)
+          .values({
+            userId: ctx.userId!,
             lastRoundId: input.roundId,
             lastQuestionId: input.questionId,
-          },
-        });
+          })
+          .onConflictDoUpdate({
+            target: [gameStates.userId],
+            set: {
+              lastRoundId: input.roundId,
+              lastQuestionId: input.questionId,
+            },
+          });
+      } else {
+        // if the answer is incorrect, we delete the last game state's question id
+        // for the user, so the user has to start over.
+        await ctx.db
+          .insert(gameStates)
+          .values({
+            userId: ctx.userId!,
+            lastQuestionId: null,
+          })
+          .onConflictDoUpdate({
+            target: [gameStates.userId],
+            set: {
+              lastQuestionId: null,
+            },
+          });
+      }
 
       return answer;
     }),

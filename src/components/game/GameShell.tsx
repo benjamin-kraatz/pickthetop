@@ -65,20 +65,29 @@ export default function GameShell({
     );
   }
 
-  const handleTimeUp = () => {
+  const handleTimeUp = async () => {
+    if (!isPlaying) {
+      return;
+    }
+    console.log(">>> time up");
+    console.log(">A> time up");
+    console.log(">v> time up");
+    console.log("><> time up");
     toast.error("Zeit abgelaufen!", {
       description: `Die richtige Antwort wäre "${question.topAnswers[0]!}" gewesen.`,
       className: "bg-orange-600 text-white",
     });
     setHasLost(true);
-    // time left, resets the game state round.
-    void answerMutator.mutateAsync({
+    setIsPlaying(false);
+
+    resetGame();
+    // time up resets the game state round.
+    answerMutator.mutate({
       roundId,
       questionId: question.id,
       state: "incorrect",
       timeLeft: 0,
     });
-    resetGame();
     router.push("/game/end");
   };
 
@@ -115,7 +124,7 @@ export default function GameShell({
 
     // time left when the answer was submitted
     const timeLeft = useQuizStore.getState().timeLeft;
-    void answerMutator.mutateAsync({
+    void answerMutator.mutate({
       roundId,
       questionId: question.id,
       state: correct ? "correct" : "incorrect",

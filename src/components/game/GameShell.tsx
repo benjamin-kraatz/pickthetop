@@ -24,6 +24,7 @@ export default function GameShell({ game }: { game: GameRound[] }) {
   const [isCorrect, setIsCorrect] = useState(false);
 
   const [hasLost, setHasLost] = useState(false);
+  const [hasWon, setHasWon] = useState(false);
 
   const [isPaused, setIsPaused] = useState(false);
   const [canPause, setCanPause] = useState(true);
@@ -99,7 +100,12 @@ export default function GameShell({ game }: { game: GameRound[] }) {
 
     if (currentRound === question.questions.length - 1) {
       toast.success("Glückwunsch! Du hast alle Runden geschafft!");
+      setHasWon(true);
       router.push("/");
+      setTimeout(() => {
+        resetGame();
+        router.refresh();
+      }, 5000);
       return;
     }
   };
@@ -244,7 +250,7 @@ export default function GameShell({ game }: { game: GameRound[] }) {
             onClick={startGame}
             className="w-full"
             variant="outline"
-            disabled={hasLost}
+            disabled={hasLost || hasWon}
           >
             {currentRound <= 1 ? "Spiel starten" : "Nächste Runde"}
           </Button>
@@ -255,7 +261,7 @@ export default function GameShell({ game }: { game: GameRound[] }) {
             onClick={startGame}
             className="w-full"
             variant="outline"
-            disabled={hasLost}
+            disabled={hasLost || hasWon}
           >
             Weiter zur nächste Runde
           </Button>

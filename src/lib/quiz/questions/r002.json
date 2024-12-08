@@ -54,7 +54,7 @@
       }
     ],
     "topAnswers": ["Stickstoff", "stickstoff"],
-    "timeLimit": 40,
+    "timeLimit": 35,
     "trivia": "Stickstoff ist nicht nur der Hauptbestandteil unserer Atmosphäre, sondern auch ein essentieller Baustein des Lebens. Interessanterweise können die meisten Lebewesen den Stickstoff aus der Luft nicht direkt nutzen - nur bestimmte Bakterien können ihn in eine verwendbare Form umwandeln."
   },
   {
@@ -112,7 +112,7 @@
       }
     ],
     "topAnswers": ["Kupfer", "kupfer"],
-    "timeLimit": 40,
+    "timeLimit": 35,
     "trivia": "Die grüne Patina auf Kupfer, wie bei der Freiheitsstatue, ist eigentlich eine Schutzschicht. Sie verhindert, dass das darunterliegende Metall weiter korrodiert - ein faszinierender natürlicher Schutzmechanismus!"
   },
   {
@@ -170,7 +170,7 @@
       }
     ],
     "topAnswers": ["Bär", "bär"],
-    "timeLimit": 40,
+    "timeLimit": 35,
     "trivia": "Der Bär als Wappentier Berlins geht auf eine alte Legende zurück: Der Name Berlin soll sich vom slawischen Wort 'Berl' (Sumpf) ableiten."
   },
   {
@@ -228,7 +228,7 @@
       }
     ],
     "topAnswers": ["Beethoven", "beethoven"],
-    "timeLimit": 40,
+    "timeLimit": 35,
     "trivia": "Beethoven komponierte seine berühmtesten Werke, als er bereits taub war. Er sägte die Beine seines Klaviers ab und spürte die Vibrationen durch den Boden, um zu komponieren."
   },
   {
@@ -286,7 +286,7 @@
       }
     ],
     "topAnswers": ["Paris", "paris"],
-    "timeLimit": 40,
+    "timeLimit": 35,
     "trivia": "Paris wurde ursprünglich von den Römern als 'Lutetia' gegründet. Der Name 'Paris' kommt von den Parisiern, einem keltischen Stamm, der sich dort niederließ."
   },
   {
@@ -344,7 +344,7 @@
       }
     ],
     "topAnswers": ["Einstein", "einstein"],
-    "timeLimit": 40,
+    "timeLimit": 35,
     "trivia": "Einstein sprach erst im Alter von vier Jahren und seine Lehrer hielten ihn für unterdurchschnittlich intelligent. Später wurde sein Gehirn für die Forschung aufbewahrt."
   },
   {
@@ -402,7 +402,7 @@
       }
     ],
     "topAnswers": ["Edison", "edison"],
-    "timeLimit": 40,
+    "timeLimit": 35,
     "trivia": "Edison hielt über 1.000 Patente und war fast taub. Er betrachtete seine Schwerhörigkeit als Vorteil, da sie ihm half, sich besser zu konzentrieren."
   },
   {
@@ -460,7 +460,7 @@
       }
     ],
     "topAnswers": ["Tennis", "tennis"],
-    "timeLimit": 40,
+    "timeLimit": 35,
     "trivia": "Tennis hat seinen Ursprung im 12. Jahrhundert in französischen Klöstern. Der Name kommt vom französischen Wort 'tenez' (haltet), das die Spieler beim Aufschlag riefen."
   },
   {
@@ -518,7 +518,7 @@
       }
     ],
     "topAnswers": ["Goethe", "goethe"],
-    "timeLimit": 40,
+    "timeLimit": 35,
     "trivia": "Goethe war nicht nur Dichter, sondern auch Naturwissenschaftler. Er entdeckte den Zwischenkieferknochen beim Menschen und entwickelte eine eigene Farbenlehre."
   },
   {
@@ -576,7 +576,7 @@
       }
     ],
     "topAnswers": ["Aluminium", "aluminium"],
-    "timeLimit": 40,
+    "timeLimit": 35,
     "trivia": "Aluminium war im 19. Jahrhundert wertvoller als Gold. Napoleon III. servierte seinen wichtigsten Gästen mit Aluminium-Besteck, während weniger wichtige Gäste Gold-Besteck bekamen."
   }
 ]

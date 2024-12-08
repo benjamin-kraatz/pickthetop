@@ -9,6 +9,9 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "~/components/ui/theme-provider";
 import { TRPCReactProvider } from "~/trpc/react";
 import { Toaster } from "~/components/ui/sonner";
+import Link from "next/link";
+import { ThemeToggle } from "~/components/ui/theme-toggle";
+import { Github } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Pick The Top - Das Mindgame",
@@ -34,6 +37,24 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <nav className="sticky top-0 z-50 flex h-16 items-center justify-between border-b border-b-muted/20 bg-background px-6 backdrop-blur-sm">
+              <div className="flex items-center space-x-4">
+                <Link href="/">
+                  <span className="text-lg font-semibold">Pick The Top</span>
+                </Link>
+                <div className="h-8 w-px bg-muted" />
+                <Link
+                  href="https://github.com/benjamin-kraatz/pickthetop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-1"
+                >
+                  <Github className="size-4" />
+                  <span>GitHub</span>
+                </Link>
+              </div>
+              <ThemeToggle />
+            </nav>
             <Toaster richColors position="top-center" />
             <TRPCReactProvider>{children}</TRPCReactProvider>
           </ThemeProvider>

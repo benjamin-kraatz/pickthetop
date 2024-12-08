@@ -193,6 +193,6 @@ Bitte beachte die [grundlegenden Infos](#spielrunden-und-fragen) zu den Dateien,
 - Vergib ausreichend, aber nicht zu viel Zeit. 30 Sekunden ist der Standard pro Runde, aber du kannst auch längere oder kürzere Zeiten festlegen, je nachdem, wie schwer die Fragen sind.
 - Du darfst gerne komplexe Fragen einbauen, die entweder einfach nur "Zeit stehlen" sollen, oder tatsächlich etwas mit der Top-Antwort zu tun haben. Sei da ganz frei.
 - Versuche, Dopplungen zu vermeiden.
-- Runden-IDs müssen dem Schema `q<runde-id>` entsprechen, während `runde-id` eine eindeutige Nummer ist und aufsteigend sein muss.
+- Runden-IDs müssen dem Schema `q<runde-id>` entsprechen, während `<runde-id>` eine eindeutige Nummer ist und aufsteigend sein muss.
 - Frage-IDs müssen dem Schema `<frage-id>` entsprechen, während `<frage-id>` eine eindeutige Nummer ist und aufsteigend sein muss.
 - Du kannst theoretisch so viele Runden pro Spielrunde hinzufügen, wie du willst. Achte aber darauf, nicht zu wenig oder zu viele Runden zu haben.

@@ -67,6 +67,7 @@ Manchmal kann es sein, dass du recht schnell auf die Top-Antwort kommst, weil kl
 - [Clerk](https://clerk.com/)
 - tRPC
 - React 19
+- [PostHog](https://posthog.com/)
 
 Die Basis dafür bildet der [T3-Stack](https://create.t3.gg/).
 

@@ -50,6 +50,13 @@
       "when": 1733663479928,
       "tag": "0006_true_leper_queen",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1733664250645,
+      "tag": "0007_freezing_flatman",
+      "breakpoints": true
     }
   ]
 }

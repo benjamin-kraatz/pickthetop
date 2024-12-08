@@ -70,6 +70,7 @@ export const gameStates = createTable(
     }).default(sql`CURRENT_TIMESTAMP`),
 
     lastRoundId: varchar("last_round_id", { length: 255 }),
+    lastQuestionId: varchar("last_question_id", { length: 255 }),
 
     userId: varchar("user_id", { length: 255 })
       .references(() => users.id)

@@ -1,0 +1,1 @@
+ALTER TABLE "ptt_game_state" ADD COLUMN "last_question_id" varchar(255);

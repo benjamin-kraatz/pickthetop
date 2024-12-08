@@ -46,8 +46,42 @@ export const users = createTable("user", {
   completedSetup: boolean("completed_setup").default(false),
 });
 
-export const usersRelations = relations(users, ({ many }) => ({
+export const usersRelations = relations(users, ({ many, one }) => ({
   quizAnswers: many(quizAnswers),
+  gameState: one(gameStates, {
+    fields: [users.id],
+    references: [gameStates.userId],
+  }),
+}));
+
+/**
+ * Game state stores the state of the game for a user.
+ * It is used to resume a game from the last round,
+ * and to store the state of the game for a user to
+ * properly select the next rounds.
+ */
+export const gameStates = createTable(
+  "game_state",
+  {
+    id: varchar("id", { length: 255 }).notNull().primaryKey(),
+    startedAt: timestamp("started_at", {
+      mode: "date",
+      withTimezone: true,
+    }).default(sql`CURRENT_TIMESTAMP`),
+
+    lastRoundId: varchar("last_round_id", { length: 255 }),
+
+    userId: varchar("user_id", { length: 255 })
+      .references(() => users.id)
+      .notNull(),
+  },
+  (tbl) => ({
+    uniq_per_user: uniqueIndex("uniq_per_user").on(tbl.userId),
+  }),
+);
+
+export const gameStatesRelations = relations(gameStates, ({ one }) => ({
+  user: one(users, { fields: [gameStates.userId], references: [users.id] }),
 }));
 
 export const quizAnswers = createTable(

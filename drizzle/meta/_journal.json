@@ -43,6 +43,13 @@
       "when": 1733659696805,
       "tag": "0005_watery_purple_man",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1733663479928,
+      "tag": "0006_true_leper_queen",
+      "breakpoints": true
     }
   ]
 }

@@ -149,6 +149,8 @@ sh ./start-database.sh
 
 ## Spielrunden und Fragen
 
+Das Spiel besteht aus verschiedenen Leveln. Jedes Level besteht aus mehreren Runden. In jeder Runde befinden sich die Fragen, deren Top-Antwort gefunden werden muss.
+
 Die Level und deren Fragen sind im Ordner [`src/lib/quiz/questions/`](https://github.com/benjamin-kraatz/pickthetop/tree/main/src/lib/quiz/questions) als **JSON**-Dateien zu finden.  
 Die Namen der Dateien sind die ID des Levels, z.B. [`r001.json`](https://github.com/benjamin-kraatz/pickthetop/tree/main/src/lib/quiz/questions/r001.json) für das erste Level. Die Spiellogik holt sich die Fragen aus diesen Dateien und nimmt die für den Nutzer passende Runde, basierend auf seinem aktuellen Level.
 

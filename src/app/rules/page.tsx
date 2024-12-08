@@ -50,7 +50,9 @@ export default function RulesPage() {
           also sei schnell und clever!
         </p>
 
-        <h2 className="mb-4 text-2xl font-semibold">
+        <div className="h-4" />
+
+        <h2 className="my-4 text-2xl font-semibold">
           Ein Beispiel zur Erklärung
         </h2>
         <p className="mb-4">
@@ -157,6 +159,8 @@ export default function RulesPage() {
           Groß- als auch Kleinschreibung ist erlaubt.
         </p>
 
+        <div className="h-8" />
+
         <h2 className="mb-4 text-2xl font-semibold">Spielablauf</h2>
         <ol className="mb-4 list-inside list-decimal space-y-2">
           <li>
@@ -173,14 +177,14 @@ export default function RulesPage() {
             gutes Bauchgefühl oder auch ein bisschen Glück.
           </li>
           <li>
-            <strong>Zeitlimit:</strong> Du hast insgesamt 30 Sekunden Zeit, um
-            deine Antworten einzugeben. Die Zeit wird heruntergezählt, und du
-            musst schnell denken und handeln.
+            <strong>Zeitlimit:</strong> Du hast insgesamt nur begrenzt Zeit, um
+            deine Antworten einzugeben. Die Zeit pro Runde wird dir immer
+            angezeigt, und du musst schnell denken und handeln.
           </li>
           <li>
             <strong>Antwort eingeben:</strong> Du kannst deine vermutete
             Top-Antwort in das Textfeld eingeben. Achte darauf, dass du die
-            Antwort korrekt schreibst, um Punkte zu sammeln.
+            Antwort korrekt schreibst.
           </li>
           <li>
             <strong>Runden:</strong> Das Spiel besteht aus mehreren Runden. Jede

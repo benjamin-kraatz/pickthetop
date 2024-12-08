@@ -15,6 +15,7 @@ import { ThemeToggle } from "~/components/ui/theme-toggle";
 import { PHProvider } from "~/lib/analytics/posthog";
 import PostHogPageView from "~/lib/analytics/posthog-pageview";
 import { TRPCReactProvider } from "~/trpc/react";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Pick The Top - Das Mindgame",
@@ -35,7 +36,9 @@ export default function RootLayout({
       >
         <PHProvider>
           <body>
-            <PostHogPageView />
+            <Suspense fallback={null}>
+              <PostHogPageView />
+            </Suspense>
             <Analytics />
             <ThemeProvider
               attribute="class"

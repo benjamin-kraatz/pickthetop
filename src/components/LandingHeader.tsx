@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { buttonVariants } from "~/components/ui/button";
+import { Badge } from "./ui/badge";
 
 /* eslint-disable @next/next/no-img-element */
 export default function LandingHeader() {
@@ -27,11 +28,16 @@ export default function LandingHeader() {
           </defs>
         </svg>
         <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-          <h2 className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-4xl">
-            Pick The Top
-            <br />
-            Das Mindgame
-          </h2>
+          <div className="relative w-fit mx-auto md:mx-0">
+            <h2 className="w-fit bg-gradient-to-r from-primary to-secondary bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-4xl">
+              Pick The Top
+              <br />
+              Das Mindgame
+            </h2>
+            <div className="absolute -right-5 -top-2">
+              <Badge>Beta</Badge>
+            </div>
+          </div>
           <p className="mt-6 text-pretty text-lg/8 text-muted-foreground">
             Finde die Top-Antwort aus einer Reihe an Fragen -{" "}
             <strong>aber Vorsicht!</strong> Du hast nicht viel Zeit!

@@ -76,9 +76,7 @@ export const gameStates = createTable(
     lastRoundId: varchar("last_round_id", { length: 255 }),
     lastQuestionId: varchar("last_question_id", { length: 255 }),
 
-    userId: varchar("user_id", { length: 255 })
-      .references(() => users.id)
-      .notNull(),
+    userId: varchar("user_id", { length: 255 }).notNull(),
   },
   (tbl) => ({
     uniq_per_user: uniqueIndex("uniq_per_user").on(tbl.userId),
@@ -106,9 +104,7 @@ export const quizAnswers = createTable(
     state: quizAnswerState("state").notNull(),
     timeLeft: integer("time_left").notNull().default(0),
 
-    userId: varchar("user_id", { length: 255 })
-      .references(() => users.id)
-      .notNull(),
+    userId: varchar("user_id", { length: 255 }).notNull(),
   },
   (tbl) => ({
     uniq_answer: uniqueIndex("uniq_answer").on(

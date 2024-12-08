@@ -57,6 +57,20 @@
       "when": 1733664250645,
       "tag": "0007_freezing_flatman",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1733680924748,
+      "tag": "0008_smooth_maria_hill",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1733680955014,
+      "tag": "0009_new_omega_sentinel",
+      "breakpoints": true
     }
   ]
 }

@@ -28,7 +28,7 @@ export default function LandingHeader() {
           </defs>
         </svg>
         <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-          <div className="relative w-fit mx-auto md:mx-0">
+          <div className="relative mx-auto w-fit md:mx-0">
             <h2 className="w-fit bg-gradient-to-r from-primary to-secondary bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-4xl">
               Pick The Top
               <br />
@@ -66,14 +66,14 @@ export default function LandingHeader() {
             src="demo_dark.png"
             width={1824}
             height={1080}
-            className="absolute left-0 top-0 hidden w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10 dark:block"
+            className="bg-white/2 absolute left-0 top-0 hidden w-[57rem] max-w-none rounded-md rounded-tl-lg border border-muted/20 p-3 ring-1 ring-white/10 dark:block"
           />
           <img
             alt="App screenshot"
             src="demo_light.png"
             width={1824}
             height={1080}
-            className="absolute left-0 top-0 block w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10 dark:hidden"
+            className="bg-white/2 absolute left-0 top-0 block w-[57rem] max-w-none rounded-md rounded-tl-lg border border-muted bg-[#f7f6ff] ring-1 ring-white/10 dark:hidden p-3"
           />
         </div>
       </div>

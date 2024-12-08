@@ -1,6 +1,6 @@
 # Pick The Top - Das Mindgame
 
-> Pick The Top - Das Mindgame ist im Rahmen des Mini-Hackathon 2.0 von [Kevin Chromik](https://www.youtube.com/@KevinChromik) entstanden. Vielen Dank auch an [Infomaniak](https://www.infomaniak.com/de), die den Mini-Hackathon sponsorn und damit die Infrastruktur für dieses Projekt bereitstellen.
+> Pick The Top - Das Mindgame ist im Rahmen des Mini-Hackathon 2.0 von [Kevin Chromik](https://www.youtube.com/@KevinChromik) entstanden.
 
 In Pick The Top spielst du ein Quiz - mit Twist! Du erhälst eine Reihe von Fragen, und du musst herausfinden, was die **Top-Antwort** ist. Aber **vorsicht**: du hast nur eine begrenzte Zeit zur Verfügung!
 

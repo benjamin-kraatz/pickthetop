@@ -44,7 +44,7 @@ export default function LandingHeader() {
               Spiel starten
             </Link>
             <Link
-              href="#"
+              href="/rules"
               className={buttonVariants({
                 variant: "ghost",
                 className: "tracking-tight",

@@ -2,7 +2,8 @@
 
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { startTransition, useMemo, useState } from "react";
+import posthog from "posthog-js";
+import { startTransition, useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { PauseTimer } from "~/components/game/pause-timer";
 import { QuestionsTable } from "~/components/game/questions-table";
@@ -49,6 +50,12 @@ export default function GameShell({
 
   const answerMutator = api.quiz.giveAnswer.useMutation();
   const completeRoundMutator = api.quiz.completeRound.useMutation();
+
+  useEffect(() => {
+    posthog.capture("game_started", {
+      roundId,
+    });
+  }, [roundId]);
 
   const question = game[Math.max(currentRound, 0)];
 

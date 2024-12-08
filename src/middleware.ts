@@ -13,6 +13,27 @@ const isPublicRoute = createRouteMatcher([
 const gamePath = "/game";
 
 export default clerkMiddleware(async (auth, req) => {
+  const url = req.nextUrl.clone();
+
+  // Handle PostHog proxy requests
+  const isPHProxy = url.pathname.startsWith("/ingest/");
+  if (isPHProxy) {
+    const hostname = "eu.i.posthog.com";
+
+    const requestHeaders = new Headers(req.headers);
+
+    requestHeaders.set("host", hostname);
+
+    url.protocol = "https";
+    url.hostname = hostname;
+    url.port = "443";
+    url.pathname = url.pathname.replace(/^\/ingest/, "");
+
+    return NextResponse.rewrite(url, {
+      headers: requestHeaders,
+    });
+  }
+
   // We have to mention API/tRPC in the matcher, but we always allow access to them.
   // tRPC is configured to handle auth, so we don't need to check for userId here.
   if (
@@ -57,5 +78,6 @@ export const config = {
     "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
     // Always run for API routes
     "/(api|trpc)(.*)",
+    "/ingest/:path*",
   ],
 };

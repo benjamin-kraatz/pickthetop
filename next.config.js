@@ -5,6 +5,9 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  // This is required to support PostHog trailing slash API requests
+  skipTrailingSlashRedirect: true,
+};
 
 export default config;

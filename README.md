@@ -82,8 +82,8 @@ Wir freuen uns über jeden Beitrag! Wenn du nicht programmieren willst, kannst d
 
 Hast du Erfahrung mit Programmierung oder Design, mach gerne mit! Am wichtigsten ist derzeit:
 
-- Spielregeln verbessern
-- mehr Runden und Fragen hinzufügen
+- [Spielregeln verbessern](https://github.com/benjamin-kraatz/pickthetop/issues/1)
+- mehr Runden und [Fragen hinzufügen](#spielrunden-und-fragen)
 - Gestaltung und Flow der Seite verbessern
 
 Schicke uns einfach einen [Pull Request](https://github.com/benjamin-kraatz/pickthetop/pulls) mit deinen Änderungen.
@@ -141,3 +141,51 @@ Wenn du Docker verwendest, kannst du die Datenbank mit [folgendem Befehl](./star
 ```bash
 sh ./start-database.sh
 ```
+
+## Spielrunden und Fragen
+
+Die Spielrunden und deren Fragen sind im Ordner [`src/lib/quiz/questions/`](https://github.com/benjamin-kraatz/pickthetop/tree/main/src/lib/quiz/questions) als **JSON**-Dateien zu finden.  
+Die Namen der Dateien sind die ID der Spielrunde, z.B. [`r001.json`](https://github.com/benjamin-kraatz/pickthetop/tree/main/src/lib/quiz/questions/r001.json) für die erste Spielrunde. Die Spiellogik holt sich die Fragen aus diesen Dateien und nimmt die für den Nutzer passende Runde, basierend auf seinem aktuellen Level.
+
+Die Grundstruktur der Dateien ist:
+
+```json
+[
+  {
+    "id": "q<runde-id>",
+    "questions": [
+      {
+        "id": <frage-id>,
+        "text": "Frage",
+        "answer": "Antwort"
+      },
+      ...
+    ],
+    "topAnswers": ["Antwort1", "Antwort2"],
+    "timeLimit": 30,
+    "trivia": "Trivia-Wissen"
+  }
+]
+```
+
+- `<runde-id>` ist die ID der Spielrunde und wird für die Spiellogik verwendet. Sie muss eindeutig pro Spielrunde sein.
+- `<frage-id>` ist die numerische ID der Frage und wird für. Sie muss eindeutig pro Frage sein.
+- `text` ist die Frage, die im Quiz angezeigt wird.
+- `answer` ist die Antwort auf diese Frage. Sie wird nur angezeigt, wenn der Nutzer eine Eingabe macht, um ihm die Möglichkeit zu geben, seine Eingabe abzugleichen.
+- `topAnswers` ist ein Array mit den Varianten, die als Top-Antwort erlaubt sind. Beispiele: `["7", "sieben"]`. Groß- und Kleinschreibung müssen nicht separat erfasst werden; das übernimmt die Spiellogik.
+- `timeLimit` ist die Zeit **in Sekunden**, die der Nutzer für die Antwort auf diese Frage hat.
+- `trivia` ist ein kurzer Text, der zusätzliche Informationen zum Thema der Frage enthält - er wird angezeigt, wenn der Nutzer die richtige Antwort eingibt.
+
+Die Dateien werden dynamisch geladen, wenn der Nutzer eine Spielrunde startet.
+
+### Fragen hinzufügen
+
+Wenn du neue Fragen hinzufügen willst, nimm die am besten die bestehenden Dateien als Vorbild und passe sie an.  
+Beispielsweise kannst du die Datei [`r001.json`](https://github.com/benjamin-kraatz/pickthetop/tree/main/src/lib/quiz/questions/r001.json) nehmen, die Fragen, Antworten, Top-Antworten und Trivia-Wissen darin bearbeiten, und die **Datei umbenennen**.  
+Die neue Datei muss dann den Namen `r<runde-id>.json` erhalten. Gibt es also bereits eine Datei `r014.json`, wäre der Name der neuen Datei `r015.json`.
+Anschließend kannst du die neue Datei in den Ordner [`src/lib/quiz/questions/`](https://github.com/benjamin-kraatz/pickthetop/tree/main/src/lib/quiz/questions) ablegen und einen [Pull Request](#mitwirken) erstellen.
+
+Bitte beachte die [grundlegenden Infos](#spielrunden-und-fragen) zu den Dateien.
+
+Die Fragen innerhalb der Runden sollten so aufgebaut sein, dass sie möglichst unterschiedliche Themengebiete abdecken. Es muss mindestens eine Antwort geben, die die Top-Antwort ist, das heißt, sie kommt mindestens einmal häufiger vor als die anderen Antworten.  
+Das Trivia-Wissen sollte kurz und knapp sein und den Spielern einen zusätzlichen Lerneffekt gewähren. Ob es zur Top-Antwort passt oder zu einer der gelisteten Fragen, ist dir überlassen.

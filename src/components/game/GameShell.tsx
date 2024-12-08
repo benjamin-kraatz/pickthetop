@@ -150,14 +150,16 @@ export default function GameShell({
     }
 
     if (currentRound === question.questions.length - 1) {
-      toast.success("Glückwunsch! Du hast alle Runden geschafft!");
+      toast.success("Glückwunsch! Du hast alle Runden geschafft!", {
+        description: "Wir leiten dich zur nächsten Spielrunde weiter.",
+      });
 
       setHasWon(true);
       setTimeout(() => {
         completeRoundMutator.mutate({ roundId });
       }, 1200);
 
-      router.push("/");
+      router.push("/game");
       setTimeout(() => {
         resetGame();
         router.refresh();

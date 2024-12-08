@@ -1,4 +1,5 @@
 import { eq, sql } from "drizzle-orm";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { getQuestions } from "~/lib/quiz/questions/actions";
 import { getNextRoundId } from "~/lib/quiz/utils";
@@ -92,6 +93,8 @@ export const quizRouter = createTRPCRouter({
         .update(gameStates)
         .set({ lastRoundId: nextRoundId, lastQuestionId: null })
         .where(eq(gameStates.userId, ctx.userId!));
+
+      revalidatePath("/game");
     }),
 
   getCurrentGameState: protectedProcedure.query(async ({ ctx }) => {

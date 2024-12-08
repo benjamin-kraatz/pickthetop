@@ -168,7 +168,7 @@ Die Grundstruktur der Dateien ist:
 ]
 ```
 
-- `<runde-id>` ist die ID der Spielrunde und wird für die Spiellogik verwendet. Sie muss eindeutig pro Spielrunde sein.
+- `<runde-id>` ist die ID der Runde/des Levels und wird für die Spiellogik verwendet. Sie muss eindeutig pro Spielrunde sein.
 - `<frage-id>` ist die numerische ID der Frage und wird für. Sie muss eindeutig pro Frage sein.
 - `text` ist die Frage, die im Quiz angezeigt wird.
 - `answer` ist die Antwort auf diese Frage. Sie wird nur angezeigt, wenn der Nutzer eine Eingabe macht, um ihm die Möglichkeit zu geben, seine Eingabe abzugleichen.

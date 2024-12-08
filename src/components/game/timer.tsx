@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Progress } from "~/components/ui/progress";
 import { getWordSecond } from "~/lib/grammar";
+import { useQuizStore } from "~/lib/quiz/store";
 import { cn } from "~/lib/utils";
 
 interface TimerProps {
@@ -18,6 +19,7 @@ export function Timer({
   isActive,
   isPaused = false,
 }: TimerProps) {
+  const updateTimeLeft = useQuizStore((state) => state.setTimeLeft);
   const [timeLeft, setTimeLeft] = useState(timeLimit);
   const isUrgent = timeLeft <= 4 && timeLeft > 0;
 
@@ -35,11 +37,13 @@ export function Timer({
     }
 
     const timer = setInterval(() => {
-      setTimeLeft((prev) => Math.max(0, prev - 1));
+      const newTimeLeft = Math.max(0, timeLeft - 1);
+      updateTimeLeft(newTimeLeft);
+      setTimeLeft(newTimeLeft);
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [timeLeft, timeLimit, onTimeUp, isActive, isPaused]);
+  }, [timeLeft, timeLimit, onTimeUp, isActive, isPaused, updateTimeLeft]);
 
   const progress = (timeLeft / timeLimit) * 100;
 
@@ -56,9 +60,9 @@ export function Timer({
         className={cn(
           "h-2",
           isUrgent && [
-            "animate-pulse duration-700 bg-destructive",
-            "animate-glow"
-          ]
+            "animate-pulse bg-destructive duration-700",
+            "animate-glow",
+          ],
         )}
       />
     </div>

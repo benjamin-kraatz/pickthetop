@@ -1,6 +1,7 @@
 import { relations, sql } from "drizzle-orm";
 import {
   boolean,
+  integer,
   pgEnum,
   pgTableCreator,
   timestamp,
@@ -64,6 +65,7 @@ export const quizAnswers = createTable(
     roundId: varchar("round_id", { length: 255 }).notNull(),
     questionId: varchar("question_id", { length: 255 }).notNull(),
     state: quizAnswerState("state").notNull(),
+    timeLeft: integer("time_left").notNull().default(0),
 
     userId: varchar("user_id", { length: 255 })
       .references(() => users.id)

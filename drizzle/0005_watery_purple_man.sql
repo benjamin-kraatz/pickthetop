@@ -1,0 +1,1 @@
+ALTER TABLE "ptt_quiz_answer" ADD COLUMN "time_left" integer DEFAULT 0 NOT NULL;

@@ -6,5 +6,5 @@ export default async function GamePage() {
     roundId: "r001",
     randomize: false,
   });
-  return <GameShell game={gameRounds} />;
+  return <GameShell roundId="r001" game={gameRounds} />;
 }

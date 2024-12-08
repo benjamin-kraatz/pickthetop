@@ -12,8 +12,16 @@ import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { type GameRound } from "~/lib/game-types";
 import { validateAnswer } from "~/lib/quiz/answers";
+import { useQuizStore } from "~/lib/quiz/store";
+import { api } from "~/trpc/react";
 
-export default function GameShell({ game }: { game: GameRound[] }) {
+export default function GameShell({
+  game,
+  roundId,
+}: {
+  game: GameRound[];
+  roundId: string;
+}) {
   const router = useRouter();
   // start at -1 as we increment on pressing "play".
   const [currentRound, setCurrentRound] = useState(-1);
@@ -28,6 +36,8 @@ export default function GameShell({ game }: { game: GameRound[] }) {
 
   const [isPaused, setIsPaused] = useState(false);
   const [canPause, setCanPause] = useState(true);
+
+  const answerMutator = api.quiz.giveAnswer.useMutation();
 
   const question = game[Math.max(currentRound, 0)];
 
@@ -86,6 +96,19 @@ export default function GameShell({ game }: { game: GameRound[] }) {
     setShowingResults(true);
     setIsPlaying(false);
 
+    // time left when the answer was submitted
+    const timeLeft = useQuizStore.getState().timeLeft;
+    void answerMutator.mutateAsync({
+      roundId,
+      questionId: question.id,
+      state: correct ? "correct" : "incorrect",
+      timeLeft,
+    });
+
+    // reset the time left. this should not be necessary as it will be "reset"
+    // when the timer component starts again.
+    useQuizStore.setState({ timeLeft: 0 });
+
     if (!correct) {
       toast.error("Das war leider falsch!", {
         description: "Das Spiel ist vorbei. Du kannst von vorne starten",
@@ -117,6 +140,8 @@ export default function GameShell({ game }: { game: GameRound[] }) {
       setShowingResults(false);
       setIsPaused(false);
       setIsCorrect(false);
+      setHasLost(false);
+      setHasWon(false);
       setAnswer("");
     });
     router.refresh();

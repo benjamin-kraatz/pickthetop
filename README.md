@@ -149,8 +149,8 @@ sh ./start-database.sh
 
 ## Spielrunden und Fragen
 
-Die Spielrunden und deren Fragen sind im Ordner [`src/lib/quiz/questions/`](https://github.com/benjamin-kraatz/pickthetop/tree/main/src/lib/quiz/questions) als **JSON**-Dateien zu finden.  
-Die Namen der Dateien sind die ID der Spielrunde, z.B. [`r001.json`](https://github.com/benjamin-kraatz/pickthetop/tree/main/src/lib/quiz/questions/r001.json) für die erste Spielrunde. Die Spiellogik holt sich die Fragen aus diesen Dateien und nimmt die für den Nutzer passende Runde, basierend auf seinem aktuellen Level.
+Die Level und deren Fragen sind im Ordner [`src/lib/quiz/questions/`](https://github.com/benjamin-kraatz/pickthetop/tree/main/src/lib/quiz/questions) als **JSON**-Dateien zu finden.  
+Die Namen der Dateien sind die ID des Levels, z.B. [`r001.json`](https://github.com/benjamin-kraatz/pickthetop/tree/main/src/lib/quiz/questions/r001.json) für das erste Level. Die Spiellogik holt sich die Fragen aus diesen Dateien und nimmt die für den Nutzer passende Runde, basierend auf seinem aktuellen Level.
 
 Die Grundstruktur der Dateien ist:
 
@@ -173,7 +173,7 @@ Die Grundstruktur der Dateien ist:
 ]
 ```
 
-- `<runde-id>` ist die ID der Runde/des Levels und wird für die Spiellogik verwendet. Sie muss eindeutig pro Spielrunde sein.
+- `<runde-id>` ist die ID der Runde und wird für die Spiellogik verwendet. Sie muss eindeutig pro Level sein.
 - `<frage-id>` ist die numerische ID der Frage und wird für. Sie muss eindeutig pro Frage sein.
 - `text` ist die Frage, die im Quiz angezeigt wird.
 - `answer` ist die Antwort auf diese Frage. Sie wird nur angezeigt, wenn der Nutzer eine Eingabe macht, um ihm die Möglichkeit zu geben, seine Eingabe abzugleichen.
@@ -181,7 +181,7 @@ Die Grundstruktur der Dateien ist:
 - `timeLimit` ist die Zeit **in Sekunden**, die der Nutzer für die Antwort auf diese Frage hat.
 - `trivia` ist ein kurzer Text, der zusätzliche Informationen zum Thema der Frage enthält - er wird angezeigt, wenn der Nutzer die richtige Antwort eingibt.
 
-Die Dateien werden dynamisch geladen, wenn der Nutzer eine Spielrunde startet.
+Die Dateien werden dynamisch geladen, wenn der Nutzer ein Level startet.
 
 ### Fragen hinzufügen
 
@@ -200,4 +200,4 @@ Bitte beachte die [grundlegenden Infos](#spielrunden-und-fragen) zu den Dateien,
 - Versuche, Dopplungen zu vermeiden.
 - Runden-IDs müssen dem Schema `q<runde-id>` entsprechen, während `<runde-id>` eine eindeutige Nummer ist und aufsteigend sein muss.
 - Frage-IDs müssen dem Schema `<frage-id>` entsprechen, während `<frage-id>` eine eindeutige Nummer ist und aufsteigend sein muss.
-- Du kannst theoretisch so viele Runden pro Spielrunde hinzufügen, wie du willst. Achte aber darauf, nicht zu wenig oder zu viele Runden zu haben.
+- Du kannst theoretisch so viele Runden pro Level hinzufügen, wie du willst. Achte aber darauf, nicht zu wenig oder zu viele Runden zu haben.

@@ -158,7 +158,7 @@ export default function GameShell({
 
     if (currentRound === question.questions.length - 1) {
       toast.success("Glückwunsch! Du hast alle Runden geschafft!", {
-        description: "Wir leiten dich zur nächsten Spielrunde weiter.",
+        description: "Wir leiten dich zum nächsten Level weiter.",
       });
 
       setHasWon(true);
@@ -195,7 +195,7 @@ export default function GameShell({
         <div className="space-y-4">
           <h1 className="text-2xl font-bold">Finde die Top-Antwort!</h1>
           <span className="text-xl font-medium">
-            Spielrunde {parseRoundId(roundId)}
+            Level {parseRoundId(roundId)}
           </span>
           <p className="text-muted-foreground">
             Finde die Antwort, die am häufigsten vorkommt. Du hast{" "}

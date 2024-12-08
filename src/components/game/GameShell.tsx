@@ -163,7 +163,7 @@ export default function GameShell({
       setTimeout(() => {
         resetGame();
         router.refresh();
-      }, 5000);
+      }, 3500);
       return;
     }
   };

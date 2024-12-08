@@ -174,15 +174,40 @@ export default function RulesPage() {
           </TableBody>
         </Table>
 
-        <p className="mt-4">
-          Finde hier die Top-Antwort. Es gibt eine Antwort, die öfter vorkommt
-          als andere. Frage 8 ist etwas komplexer und will dich vielleicht
+        <p className="mt-4">Finde hier die Top-Antwort.</p>
+        <p>
+          Es gibt eine Antwort, die öfter vorkommt als andere, und genau die
+          gilt es zu finden. Dabei kannst du von oben nach unten die Fragen für
+          dich beantworten und feststellen, welche Antwort wohl öfter vorkommt.
+          Manchmal kann es aber auch sein, dass du eine Frage nicht beantworten
+          kannst - das ist nicht schlimm! Versuche es einfach mit der nächsten
+          Frage.
+        </p>
+        <p>
+          Manche Fragen wollen dir einfach nur die Zeit stehlen, weil sie
+          komplex sind und/oder deren Antwort gar nichts mit der Top-Antwort zu
+          tun hat.
+        </p>
+        <br />
+        <p>
+          Beispiel Frage 8: sie ist etwas komplexer und will dich vielleicht
           aufhalten. Sie <i>kann</i> ein Teil der Top-Antwort sein, muss aber
           nicht.
         </p>
+        <br />
+        <p>
+          Manche Antworten können die Top-Antwort auch lediglich{" "}
+          <i>beinhalten</i>: nehmen wir an, die Top-Antwort ist 7. Dann kann es
+          sein, dass es eine Frage mit der Antwort &quot;Siebengebierge&quot;
+          gibt; sie beinhaltet also die 7 als Zahlwort und gibt somit einen
+          Hinweis auf die richtige Top-Antwort.
+        </p>
 
         <p className="mt-4">
-          Die Top-Antwort ist: <b>7</b> oder <b>sieben</b>. Du hast die
+          Schauen wir uns nun die Lösung für das obige Beispiel an:
+        </p>
+        <p>
+          Die Top-Antwort ist: <b>7</b> (oder <b>sieben</b>). Du hast die
           Möglichkeit, die Antwort als Zahl oder als Wort einzugeben - Sowohl
           Groß- als auch Kleinschreibung ist erlaubt.
         </p>

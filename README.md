@@ -185,7 +185,14 @@ Beispielsweise kannst du die Datei [`r001.json`](https://github.com/benjamin-kra
 Die neue Datei muss dann den Namen `r<runde-id>.json` erhalten. Gibt es also bereits eine Datei `r014.json`, wäre der Name der neuen Datei `r015.json`.
 Anschließend kannst du die neue Datei in den Ordner [`src/lib/quiz/questions/`](https://github.com/benjamin-kraatz/pickthetop/tree/main/src/lib/quiz/questions) ablegen und einen [Pull Request](#mitwirken) erstellen.
 
-Bitte beachte die [grundlegenden Infos](#spielrunden-und-fragen) zu den Dateien.
+Bitte beachte die [grundlegenden Infos](#spielrunden-und-fragen) zu den Dateien, sowie die folgenden Punkte zur Gestaltung der Fragen:
 
-Die Fragen innerhalb der Runden sollten so aufgebaut sein, dass sie möglichst unterschiedliche Themengebiete abdecken. Es muss mindestens eine Antwort geben, die die Top-Antwort ist, das heißt, sie kommt mindestens einmal häufiger vor als die anderen Antworten.  
-Das Trivia-Wissen sollte kurz und knapp sein und den Spielern einen zusätzlichen Lerneffekt gewähren. Ob es zur Top-Antwort passt oder zu einer der gelisteten Fragen, ist dir überlassen.
+- Die Fragen innerhalb der Runden sollten so aufgebaut sein, dass sie möglichst unterschiedliche Themengebiete abdecken.
+- Es muss mindestens eine Antwort geben, die die Top-Antwort ist, das heißt, sie kommt mindestens einmal häufiger vor als die anderen Antworten.
+- Das Trivia-Wissen sollte kurz und knapp sein und den Spielern einen zusätzlichen Lerneffekt gewähren. Ob es zur Top-Antwort passt oder zu einer der gelisteten Fragen, ist dir überlassen.
+- Vergib ausreichend, aber nicht zu viel Zeit. 30 Sekunden ist der Standard pro Runde, aber du kannst auch längere oder kürzere Zeiten festlegen, je nachdem, wie schwer die Fragen sind.
+- Du darfst gerne komplexe Fragen einbauen, die entweder einfach nur "Zeit stehlen" sollen, oder tatsächlich etwas mit der Top-Antwort zu tun haben. Sei da ganz frei.
+- Versuche, Dopplungen zu vermeiden.
+- Runden-IDs müssen dem Schema `q<runde-id>` entsprechen, während `runde-id` eine eindeutige Nummer ist und aufsteigend sein muss.
+- Frage-IDs müssen dem Schema `<frage-id>` entsprechen, während `<frage-id>` eine eindeutige Nummer ist und aufsteigend sein muss.
+- Du kannst theoretisch so viele Runden pro Spielrunde hinzufügen, wie du willst. Achte aber darauf, nicht zu wenig oder zu viele Runden zu haben.

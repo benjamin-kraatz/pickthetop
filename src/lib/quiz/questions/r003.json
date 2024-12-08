@@ -1,0 +1,569 @@
+[
+  {
+    "id": "q1",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welches Element hat die höchste Elektronegativität im Periodensystem?",
+        "answer": "Fluor"
+      },
+      {
+        "id": 2,
+        "text": "Was ist die chemische Formel für Wasser?",
+        "answer": "H2O"
+      },
+      {
+        "id": 3,
+        "text": "Welches Element ist ein Halogen und kommt in der Natur als Gas vor?",
+        "answer": "Fluor"
+      },
+      {
+        "id": 4,
+        "text": "Was ist das häufigste Element im Universum?",
+        "answer": "Wasserstoff"
+      },
+      {
+        "id": 5,
+        "text": "Welches Element hat das chemische Symbol He?",
+        "answer": "Helium"
+      },
+      {
+        "id": 6,
+        "text": "Welches Element wird in der Atomkraft verwendet?",
+        "answer": "Uran"
+      },
+      {
+        "id": 7,
+        "text": "Welches Element ist für die Photosynthese unerlässlich?",
+        "answer": "Kohlenstoff"
+      },
+      {
+        "id": 8,
+        "text": "Welches Element hat die Ordnungszahl 9?",
+        "answer": "Fluor"
+      },
+      {
+        "id": 9,
+        "text": "Welches Element ist ein Edelgas und hat die Ordnungszahl 10?",
+        "answer": "Neon"
+      },
+      {
+        "id": 10,
+        "text": "Welches Element ist der Hauptbestandteil von Erdöl?",
+        "answer": "Kohlenstoff"
+      }
+    ],
+    "topAnswers": ["Fluor", "fluor"],
+    "timeLimit": 30,
+    "trivia": "Fluor ist das reaktivste Element und kann mit fast allen anderen Elementen Verbindungen eingehen. Es wird in der Zahnmedizin zur Kariesprophylaxe eingesetzt."
+  },
+  {
+    "id": "q2",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welches Land hat die meisten UNESCO-Weltkulturerbestätten?",
+        "answer": "Italien"
+      },
+      {
+        "id": 2,
+        "text": "In welchem Jahr fand die erste Mondlandung statt?",
+        "answer": "1969"
+      },
+      {
+        "id": 3,
+        "text": "Welches Land ist bekannt für seine Pyramiden?",
+        "answer": "Ägypten"
+      },
+      {
+        "id": 4,
+        "text": "Welches Land hat die größte Bevölkerung der Welt?",
+        "answer": "China"
+      },
+      {
+        "id": 5,
+        "text": "Welches Land ist die Heimat des Tango?",
+        "answer": "Argentinien"
+      },
+      {
+        "id": 6,
+        "text": "In welchem Land befindet sich die Stadt Petra?",
+        "answer": "Jordanien"
+      },
+      {
+        "id": 7,
+        "text": "Welches Land hat die meisten Vulkane?",
+        "answer": "Indonesien"
+      },
+      {
+        "id": 8,
+        "text": "Welches Land ist bekannt für seine Fjorde?",
+        "answer": "Norwegen"
+      },
+      {
+        "id": 9,
+        "text": "Welches Land hat die größte Fläche?",
+        "answer": "Russland"
+      },
+      {
+        "id": 10,
+        "text": "Welches katholische Land grenzt an das Land, welches bekannt für seine Schokolade und Uhren ist?",
+        "answer": "Italien"
+      }
+    ],
+    "topAnswers": ["Italien", "italien"],
+    "timeLimit": 30,
+    "trivia": "Italien hat 58 UNESCO-Weltkulturerbestätten, darunter die Ruinen von Pompeji und die historischen Zentren von Florenz und Rom."
+  },
+  {
+    "id": "q3",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welches Tier ist das größte lebende Landtier?",
+        "answer": "Afrikanischer Elefant"
+      },
+      {
+        "id": 2,
+        "text": "Welches Tier kann bis zu 30 Jahre alt werden und ist bekannt für seine Intelligenz?",
+        "answer": "Delfin"
+      },
+      {
+        "id": 3,
+        "text": "Welches Tier hat das größte Gehirn im Verhältnis zu seiner Körpergröße?",
+        "answer": "Ameise"
+      },
+      {
+        "id": 4,
+        "text": "Welches Tier ist bekannt für seine Fähigkeit, in der Wüste zu überleben?",
+        "answer": "Kamel"
+      },
+      {
+        "id": 5,
+        "text": "Welches Tier hat die längste Lebensdauer?",
+        "answer": "Grönlandwal"
+      },
+      {
+        "id": 6,
+        "text": "Welches Tier ist das schnellste Landtier?",
+        "answer": "Gepard"
+      },
+      {
+        "id": 7,
+        "text": "Welches Tier kann seine Farbe ändern, um sich zu tarnen?",
+        "answer": "Chamäleon"
+      },
+      {
+        "id": 8,
+        "text": "Welches Tier ist bekannt für seine Fähigkeit, in der Dunkelheit zu sehen?",
+        "answer": "Eule"
+      },
+      {
+        "id": 9,
+        "text": "Welches Tier hat einen langen Hals und frisst Blätter von Bäumen?",
+        "answer": "Giraffe"
+      },
+      {
+        "id": 10,
+        "text": "Welches Tier ist eine Unterordnung der Schwielensohler, aber kein Dromedar?",
+        "answer": "Kamel"
+      }
+    ],
+    "topAnswers": ["Kamel", "kamel"],
+    "timeLimit": 30,
+    "trivia": "Kamele sind verwandt mit dem Dromedar und dem Trampeltier. Sie sind bekannt für ihre Fähigkeit, in der Wüste zu überleben und ihre Fähigkeit, Wasser und Nahrung auf lange Zeit zu speichern."
+  },
+  {
+    "id": "q4",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welches Gemälde wurde von Leonardo da Vinci geschaffen und zeigt eine Frau mit einem geheimnisvollen Lächeln?",
+        "answer": "Mona (Lisa)"
+      },
+      {
+        "id": 2,
+        "text": "Welches berühmte Bauwerk wurde als Grabmal für die Frau eines Moguls erbaut?",
+        "answer": "Taj Mahal"
+      },
+      {
+        "id": 3,
+        "text": "Weiblicher Vorname, der sich vom italienischen 'Frau' ableitet",
+        "answer": "Mona"
+      },
+      {
+        "id": 4,
+        "text": "Welches berühmte Bild zeigt einen Mann, der auf einem Pferd reitet und eine Flagge hält?",
+        "answer": "Washington Crossing the Delaware"
+      },
+      {
+        "id": 5,
+        "text": "Welches Kunstwerk ist ein Symbol für die Freiheit und steht in New York?",
+        "answer": "Freiheitsstatue"
+      },
+      {
+        "id": 6,
+        "text": "Welches Gemälde zeigt eine Gruppe von Menschen, die um einen Tisch versammelt sind?",
+        "answer": "Das letzte Abendmahl"
+      },
+      {
+        "id": 7,
+        "text": "Kurzform des Namens Madonna",
+        "answer": "Mona"
+      },
+      {
+        "id": 8,
+        "text": "Welches Kunstwerk zeigt eine Gruppe von Menschen, die in einem Raum sitzen und diskutieren?",
+        "answer": "Die Schule von Athen"
+      },
+      {
+        "id": 9,
+        "text": "Welches berühmte Bild zeigt eine Landschaft mit einem Regenbogen?",
+        "answer": "Der Wanderer über dem Nebelmeer"
+      },
+      {
+        "id": 10,
+        "text": "Welches Kunstwerk zeigt eine Gruppe von Menschen, die in einem Boot sitzen?",
+        "answer": "Die Flucht nach Ägypten"
+      }
+    ],
+    "topAnswers": ["Mona", "mona"],
+    "timeLimit": 30,
+    "trivia": "Die Mona Lisa ist eines der bekanntesten Gemälde der Welt und wird im Louvre in Paris ausgestellt. Dabei ist ihr Name gar nicht Mona. Der Name Mona leitet sich vom italienischen \"Monna\" ab, was so viel wie \"Frau\" bedeutet."
+  },
+  {
+    "id": "q5",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welches Land hat den höchsten Berg der Welt, den Mount Everest?",
+        "answer": "Nepal"
+      },
+      {
+        "id": 2,
+        "text": "Das O in H2O steht für?",
+        "answer": "Sauerstoff"
+      },
+      {
+        "id": 3,
+        "text": "Wer war der erste Präsident der Vereinigten Staaten?",
+        "answer": "George Washington"
+      },
+      {
+        "id": 4,
+        "text": "Welcher Künstler ist bekannt für seine Werke 'Die Sternennacht' und 'Die Irissen'?",
+        "answer": "Vincent van Gogh"
+      },
+      {
+        "id": 5,
+        "text": "Welche Band veröffentlichte das legendäre Album 'Abbey Road'?",
+        "answer": "The Beatles"
+      },
+      {
+        "id": 6,
+        "text": "Davon sollte ein erwachsener Mensch laut Empfehlungen 2 Liter täglich trinken.",
+        "answer": "Wasser"
+      },
+      {
+        "id": 7,
+        "text": "Nicht der Hauptbestandteil von Wasser ist?",
+        "answer": "Sauerstoff"
+      }
+    ],
+    "topAnswers": ["Sauerstoff", "sauerstoff"],
+    "timeLimit": 30,
+    "trivia": "Heißes Wasser löscht Feuer besser als kaltes. Der Grund: Die Temperatur des Wassers bestimmt die Verdampfungstemperatur. Bei 100°C beträgt die Verdampfungswärme des Wassers 2257 kJ/kg. Das bedeutet, dass 1 kg Wasser, das von 20°C auf 100°C erwärmt wird, 83,9 kcal Energie aufnehmen muss."
+  },
+  {
+    "id": "q6",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welches Element hat die Ordnungszahl 1?",
+        "answer": "Wasserstoff"
+      },
+      {
+        "id": 2,
+        "text": "Welches Element ist das häufigste im Universum?",
+        "answer": "Wasserstoff"
+      },
+      {
+        "id": 3,
+        "text": "Welches Element hat die Ordnungszahl 6?",
+        "answer": "Kohlenstoff"
+      },
+      {
+        "id": 4,
+        "text": "Welches Element hat die Ordnungszahl 8?",
+        "answer": "Sauerstoff"
+      },
+      {
+        "id": 5,
+        "text": "Welches Element hat die Ordnungszahl 7?",
+        "answer": "Stickstoff"
+      },
+      {
+        "id": 6,
+        "text": "Welches Element hat die Ordnungszahl 12?",
+        "answer": "Magnesium"
+      },
+      {
+        "id": 7,
+        "text": "Welches Element hat die Ordnungszahl 26?",
+        "answer": "Eisen"
+      },
+      {
+        "id": 8,
+        "text": "Welches Element hat die Ordnungszahl 29?",
+        "answer": "Kupfer"
+      },
+      {
+        "id": 9,
+        "text": "Welches Element hat die Ordnungszahl 47?",
+        "answer": "Silber"
+      },
+      {
+        "id": 10,
+        "text": "Welches Element hat die Ordnungszahl 79?",
+        "answer": "Gold"
+      }
+    ],
+    "topAnswers": ["Wasserstoff", "wasserstoff"],
+    "timeLimit": 30,
+    "trivia": "Wasserstoff ist das leichteste und häufigste Element im Universum. Es macht etwa 75% der baryonischen Masse des Universums aus."
+  },
+  {
+    "id": "q7",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welches Land hat die meisten Nobelpreisträger?",
+        "answer": "USA"
+      },
+      {
+        "id": 2,
+        "text": "Welches Land hat die meisten Erfindungen pro Kopf?",
+        "answer": "Schweiz"
+      },
+      {
+        "id": 3,
+        "text": "Welches Land hat die meisten Patente pro Jahr?",
+        "answer": "Japan"
+      },
+      {
+        "id": 4,
+        "text": "Welches Land hat die meisten Universitäten pro Kopf?",
+        "answer": "USA"
+      },
+      {
+        "id": 5,
+        "text": "Welches Land hat die meisten Wissenschaftler pro Kopf?",
+        "answer": "Schweden"
+      },
+      {
+        "id": 6,
+        "text": "Welches Land hat die meisten Erfindungen im Bereich der Technologie?",
+        "answer": "USA"
+      },
+      {
+        "id": 7,
+        "text": "Welches Land hat die meisten Erfindungen im Bereich der Medizin?",
+        "answer": "Deutschland"
+      },
+      {
+        "id": 8,
+        "text": "Welches Land hat die meisten Erfindungen im Bereich der Umwelttechnologie?",
+        "answer": "Dänemark"
+      },
+      {
+        "id": 9,
+        "text": "Welches Land hat die meisten Erfindungen im Bereich der Raumfahrt?",
+        "answer": "USA"
+      },
+      {
+        "id": 10,
+        "text": "Welches Land hat die meisten Erfindungen im Bereich der erneuerbaren Energien?",
+        "answer": "Deutschland"
+      }
+    ],
+    "topAnswers": ["USA", "usa"],
+    "timeLimit": 30,
+    "trivia": "Die USA haben die meisten Nobelpreisträger in den Bereichen Physik, Chemie und Medizin. Viele der bedeutendsten Erfindungen stammen aus den USA."
+  },
+  {
+    "id": "q8",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welches Land hat die größte Fläche in Afrika?",
+        "answer": "Algerien"
+      },
+      {
+        "id": 2,
+        "text": "Welches Land hat die größte Bevölkerung in Afrika?",
+        "answer": "Nigeria"
+      },
+      {
+        "id": 3,
+        "text": "Welches Land hat die meisten Sprachen in Afrika?",
+        "answer": "Papua-Neuguinea"
+      },
+      {
+        "id": 4,
+        "text": "Welches Land hat die meisten UNESCO-Weltkulturerbestätten in Afrika?",
+        "answer": "Ägypten"
+      },
+      {
+        "id": 5,
+        "text": "Welches Land hat die meisten Vulkane in Afrika?",
+        "answer": "Äthiopien"
+      },
+      {
+        "id": 6,
+        "text": "Welches Land hat die meisten Nationalparks in Afrika?",
+        "answer": "Tansania"
+      },
+      {
+        "id": 7,
+        "text": "Welches Land hat die meisten Tierarten in Afrika?",
+        "answer": "Tansania"
+      },
+      {
+        "id": 8,
+        "text": "Welches Land hat die meisten Flüsse in Afrika?",
+        "answer": "Kongo"
+      },
+      {
+        "id": 9,
+        "text": "Welches Land hat die meisten Berge in Afrika?",
+        "answer": "Tansania"
+      },
+      {
+        "id": 10,
+        "text": "Welches Land hat die meisten Strände in Afrika?",
+        "answer": "Südafrika"
+      }
+    ],
+    "topAnswers": ["Tansania", "tansania"],
+    "timeLimit": 30,
+    "trivia": "Tansania hat einen See, der rosarot gefärbt ist. Das liegt an tauenden Flamingos, die zum Brüten in die Region kommen, da dort Bedingungen herrschen, die Gegner abhalten."
+  },
+  {
+    "id": "q9",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welches Land hat die meisten Einwohner in Westeuropa (2024)?",
+        "answer": "Deutschland"
+      },
+      {
+        "id": 2,
+        "text": "Welches Land hat die meisten Nachbarn in Westeuropa?",
+        "answer": "Deutschland"
+      },
+      {
+        "id": 3,
+        "text": "Welches Land hat die meisten UNESCO-Weltkulturerbestätten in Europa?",
+        "answer": "Italien"
+      },
+      {
+        "id": 4,
+        "text": "Welches Land hat die meisten Sprachen in Europa?",
+        "answer": "Belgien"
+      },
+      {
+        "id": 5,
+        "text": "Welches Land hat die meisten Berge in Europa?",
+        "answer": "Schweiz"
+      },
+      {
+        "id": 6,
+        "text": "Ein Land in Europa, das kein Tempolimit hat?",
+        "answer": "Deutschland"
+      },
+      {
+        "id": 7,
+        "text": "Welches Land hat die meisten Seen in Europa?",
+        "answer": "Finnland"
+      },
+      {
+        "id": 8,
+        "text": "Welches Land hat die meisten Inseln in Europa?",
+        "answer": "Schweden"
+      },
+      {
+        "id": 9,
+        "text": "Welches Land hat die meisten Nationalparks in Europa?",
+        "answer": "Schweden"
+      },
+      {
+        "id": 10,
+        "text": "Welches Land hat die meisten Strände in Europa?",
+        "answer": "Spanien"
+      }
+    ],
+    "topAnswers": ["Deutschland", "deutschland"],
+    "timeLimit": 30,
+    "trivia": "Deutschland hat die größte Bevölkerung in Europa mit über 83 Millionen Einwohnern. Es ist bekannt für seine Kultur, Geschichte und Wirtschaft."
+  },
+  {
+    "id": "q10",
+    "questions": [
+      [
+        {
+          "id": 1,
+          "text": "Was ist der höchste Berg der Welt?",
+          "answer": "Mount Everest"
+        },
+        {
+          "id": 2,
+          "text": "Der Vorname des kleinen Jungen aus 'Lönneberga'?",
+          "answer": "Michel"
+        },
+        {
+          "id": 3,
+          "text": "Wer schrieb „Der Herr der Ringe“?",
+          "answer": "J.R.R. Tolkien"
+        },
+        {
+          "id": 4,
+          "text": "Welches Land ist bekannt für die Stadt Tokio?",
+          "answer": "Japan"
+        },
+        {
+          "id": 5,
+          "text": "Was ist die Hauptstadt von Frankreich?",
+          "answer": "Paris"
+        },
+        {
+          "id": 6,
+          "text": "Wie heißt der berühmte Maler, der die „Sixtinische Kapelle“ malte?",
+          "answer": "Michel(angelo)"
+        },
+        {
+          "id": 7,
+          "text": "Welcher Kontinent hat die größte Fläche?",
+          "answer": "Asien"
+        },
+        {
+          "id": 8,
+          "text": "Welcher Planet ist der größte im Sonnensystem?",
+          "answer": "Jupiter"
+        },
+        {
+          "id": 9,
+          "text": "Was ist der chemische Hauptbestandteil von Luft?",
+          "answer": "Stickstoff"
+        },
+        {
+          "id": 10,
+          "text": "Welcher Fluss fließt durch London?",
+          "answer": "Themse"
+        }
+      ]
+    ],
+    "topAnswers": ["Michel", "michel"],
+    "timeLimit": 30,
+    "trivia": "'Michel' kommt aus dem Hebräischen und bedeutet 'Wer ist wie Gott?'."
+  }
+]

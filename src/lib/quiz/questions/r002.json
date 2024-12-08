@@ -1,0 +1,582 @@
+[
+  {
+    "id": "q1",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welches chemische Element ist ein Hauptbestandteil der Luft?",
+        "answer": "Stickstoff"
+      },
+      {
+        "id": 2,
+        "text": "Welchen Landes ist die Hauptstadt Wien?",
+        "answer": "Österreich"
+      },
+      {
+        "id": 3,
+        "text": "Woher kommt der Autor des Werks 'Die Zauberflöte'?",
+        "answer": "Österreich"
+      },
+      {
+        "id": 4,
+        "text": "Welches Element hat das chemische Symbol N?",
+        "answer": "Stickstoff"
+      },
+      {
+        "id": 5,
+        "text": "Wie heißt der höchste Berg Deutschlands?",
+        "answer": "Zugspitze"
+      },
+      {
+        "id": 6,
+        "text": "Welches Element ist essentiell für die Herstellung von Düngemitteln?",
+        "answer": "Stickstoff"
+      },
+      {
+        "id": 7,
+        "text": "Welches Gas wird in der Kryokonservierung verwendet?",
+        "answer": "Stickstoff"
+      },
+      {
+        "id": 8,
+        "text": "Wie nennt man einen jungen Hund?",
+        "answer": "Welpe"
+      },
+      {
+        "id": 9,
+        "text": "Was ist die Hauptzutat von Sushi?",
+        "answer": "Reis"
+      },
+      {
+        "id": 10,
+        "text": "Welches Gas macht etwa 78% der Erdatmosphäre aus?",
+        "answer": "Stickstoff"
+      }
+    ],
+    "topAnswers": ["Stickstoff", "stickstoff"],
+    "timeLimit": 30,
+    "trivia": "Stickstoff ist nicht nur der Hauptbestandteil unserer Atmosphäre, sondern auch ein essentieller Baustein des Lebens. Interessanterweise können die meisten Lebewesen den Stickstoff aus der Luft nicht direkt nutzen - nur bestimmte Bakterien können ihn in eine verwendbare Form umwandeln."
+  },
+  {
+    "id": "q2",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welches Metall wird für Stromkabel verwendet?",
+        "answer": "Kupfer"
+      },
+      {
+        "id": 2,
+        "text": "Was ist das chemische Symbol für Kalium?",
+        "answer": "K"
+      },
+      {
+        "id": 3,
+        "text": "Welches Metall gibt Töpfen ihre rötliche Farbe?",
+        "answer": "Kupfer"
+      },
+      {
+        "id": 4,
+        "text": "Woraus besteht die Freiheitsstatue außen?",
+        "answer": "Kupfer"
+      },
+      {
+        "id": 5,
+        "text": "Was ist der Hauptbestandteil von Granit?",
+        "answer": "Quarz"
+      },
+      {
+        "id": 6,
+        "text": "Welches Metall wurde in der Bronzezeit mit Zinn vermischt?",
+        "answer": "Kupfer"
+      },
+      {
+        "id": 7,
+        "text": "Was ist das härteste natürliche Material?",
+        "answer": "Diamant"
+      },
+      {
+        "id": 8,
+        "text": "Welches Metall färbt Türkis grün?",
+        "answer": "Kupfer"
+      },
+      {
+        "id": 9,
+        "text": "Was ist der Hauptbestandteil von Sand?",
+        "answer": "Silizium"
+      },
+      {
+        "id": 10,
+        "text": "Welches Element wird in Computerchips verwendet?",
+        "answer": "Silizium"
+      }
+    ],
+    "topAnswers": ["Kupfer", "kupfer"],
+    "timeLimit": 30,
+    "trivia": "Die grüne Patina auf Kupfer, wie bei der Freiheitsstatue, ist eigentlich eine Schutzschicht. Sie verhindert, dass das darunterliegende Metall weiter korrodiert - ein faszinierender natürlicher Schutzmechanismus!"
+  },
+  {
+    "id": "q3",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welches Tier ist das Wappentier Berlins?",
+        "answer": "Bär"
+      },
+      {
+        "id": 2,
+        "text": "Welches Tier lebt in der Arktis und jagt Robben?",
+        "answer": "Eisbär"
+      },
+      {
+        "id": 3,
+        "text": "Was ist das Symbol der Russischen Föderation?",
+        "answer": "Bär"
+      },
+      {
+        "id": 4,
+        "text": "Welches Säugetier hat die längste Zunge?",
+        "answer": "Ameisenbär"
+      },
+      {
+        "id": 5,
+        "text": "Was ist das Maskottchen von Haribo?",
+        "answer": "Bär"
+      },
+      {
+        "id": 6,
+        "text": "Welches Tier ist der größte Fleischfresser an Land?",
+        "answer": "Kodiakbär"
+      },
+      {
+        "id": 7,
+        "text": "Was ist das schnellste Landtier?",
+        "answer": "Gepard"
+      },
+      {
+        "id": 8,
+        "text": "Welches Tier schläft im Winter?",
+        "answer": "Igel"
+      },
+      {
+        "id": 9,
+        "text": "Was ist das Wappentier der Schweizer Stadt Bern?",
+        "answer": "Bär"
+      },
+      {
+        "id": 10,
+        "text": "Welches Tier ist das Symbol des WWF?",
+        "answer": "Panda"
+      }
+    ],
+    "topAnswers": ["Bär", "bär"],
+    "timeLimit": 30,
+    "trivia": "Der Bär als Wappentier Berlins geht auf eine alte Legende zurück: Der Name Berlin soll sich vom slawischen Wort 'Berl' (Sumpf) ableiten."
+  },
+  {
+    "id": "q4",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welcher Komponist schrieb die 'Mondscheinsonate'?",
+        "answer": "Beethoven"
+      },
+      {
+        "id": 2,
+        "text": "In welcher Stadt wurde Bach geboren?",
+        "answer": "Eisenach"
+      },
+      {
+        "id": 3,
+        "text": "Wer komponierte die '9. Sinfonie'?",
+        "answer": "Beethoven"
+      },
+      {
+        "id": 4,
+        "text": "Welcher Komponist wurde mit 35 Jahren taub?",
+        "answer": "Beethoven"
+      },
+      {
+        "id": 5,
+        "text": "Wer schrieb 'Für Elise'?",
+        "answer": "Beethoven"
+      },
+      {
+        "id": 6,
+        "text": "Welcher Komponist starb 1791 in Wien?",
+        "answer": "Mozart"
+      },
+      {
+        "id": 7,
+        "text": "In welcher Stadt liegt die Sixtinische Kapelle?",
+        "answer": "Rom"
+      },
+      {
+        "id": 8,
+        "text": "Wer komponierte die 'Schicksalssinfonie'?",
+        "answer": "Beethoven"
+      },
+      {
+        "id": 9,
+        "text": "Welcher Komponist schrieb das 'Ave Maria'?",
+        "answer": "Schubert"
+      },
+      {
+        "id": 10,
+        "text": "In welcher Stadt wurde Wagner geboren?",
+        "answer": "Leipzig"
+      }
+    ],
+    "topAnswers": ["Beethoven", "beethoven"],
+    "timeLimit": 30,
+    "trivia": "Beethoven komponierte seine berühmtesten Werke, als er bereits taub war. Er sägte die Beine seines Klaviers ab und spürte die Vibrationen durch den Boden, um zu komponieren."
+  },
+  {
+    "id": "q5",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Was ist die Hauptstadt von Portugal?",
+        "answer": "Lissabon"
+      },
+      {
+        "id": 2,
+        "text": "An welchem Fluss liegt Paris?",
+        "answer": "Seine"
+      },
+      {
+        "id": 3,
+        "text": "Was ist die Hauptstadt von Frankreich?",
+        "answer": "Paris"
+      },
+      {
+        "id": 4,
+        "text": "Wo steht der Eiffelturm?",
+        "answer": "Paris"
+      },
+      {
+        "id": 5,
+        "text": "Was ist die Hauptstadt von Italien?",
+        "answer": "Rom"
+      },
+      {
+        "id": 6,
+        "text": "Wo befindet sich der Louvre?",
+        "answer": "Paris"
+      },
+      {
+        "id": 7,
+        "text": "Was ist die Hauptstadt von Spanien?",
+        "answer": "Madrid"
+      },
+      {
+        "id": 8,
+        "text": "Wo liegt Notre-Dame?",
+        "answer": "Paris"
+      },
+      {
+        "id": 9,
+        "text": "Was ist die Hauptstadt von Griechenland?",
+        "answer": "Athen"
+      },
+      {
+        "id": 10,
+        "text": "Was ist die Hauptstadt von England?",
+        "answer": "London"
+      }
+    ],
+    "topAnswers": ["Paris", "paris"],
+    "timeLimit": 30,
+    "trivia": "Paris wurde ursprünglich von den Römern als 'Lutetia' gegründet. Der Name 'Paris' kommt von den Parisiern, einem keltischen Stamm, der sich dort niederließ."
+  },
+  {
+    "id": "q6",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Wer entdeckte die Radioaktivität?",
+        "answer": "Becquerel"
+      },
+      {
+        "id": 2,
+        "text": "Wer entdeckte das Penicillin?",
+        "answer": "Fleming"
+      },
+      {
+        "id": 3,
+        "text": "Wer formulierte die Relativitätstheorie?",
+        "answer": "Einstein"
+      },
+      {
+        "id": 4,
+        "text": "Wer entwickelte die Quantentheorie?",
+        "answer": "Einstein"
+      },
+      {
+        "id": 5,
+        "text": "Wer schrieb E = mc²?",
+        "answer": "Einstein"
+      },
+      {
+        "id": 6,
+        "text": "Wer entdeckte die Röntgenstrahlen?",
+        "answer": "Röntgen"
+      },
+      {
+        "id": 7,
+        "text": "Wer erhielt den Nobelpreis für den photoelektrischen Effekt?",
+        "answer": "Einstein"
+      },
+      {
+        "id": 8,
+        "text": "Wer entdeckte das Radium?",
+        "answer": "Curie"
+      },
+      {
+        "id": 9,
+        "text": "Wer entwickelte das Periodensystem?",
+        "answer": "Mendelejew"
+      },
+      {
+        "id": 10,
+        "text": "Wer entdeckte die Kernspaltung?",
+        "answer": "Meitner"
+      }
+    ],
+    "topAnswers": ["Einstein", "einstein"],
+    "timeLimit": 30,
+    "trivia": "Einstein sprach erst im Alter von vier Jahren und seine Lehrer hielten ihn für unterdurchschnittlich intelligent. Später wurde sein Gehirn für die Forschung aufbewahrt."
+  },
+  {
+    "id": "q7",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Wer erfand den Buchdruck mit beweglichen Lettern?",
+        "answer": "Gutenberg"
+      },
+      {
+        "id": 2,
+        "text": "Wer erfand die Glühbirne?",
+        "answer": "Edison"
+      },
+      {
+        "id": 3,
+        "text": "Wer erfand das Telefon?",
+        "answer": "Bell"
+      },
+      {
+        "id": 4,
+        "text": "Wer erfand den Phonographen?",
+        "answer": "Edison"
+      },
+      {
+        "id": 5,
+        "text": "Wer entwickelte das erste Auto?",
+        "answer": "Benz"
+      },
+      {
+        "id": 6,
+        "text": "Wer erfand die elektrische Batterie?",
+        "answer": "Edison"
+      },
+      {
+        "id": 7,
+        "text": "Wer erfand den Fernseher?",
+        "answer": "Baird"
+      },
+      {
+        "id": 8,
+        "text": "Wer erfand die Filmkamera?",
+        "answer": "Edison"
+      },
+      {
+        "id": 9,
+        "text": "Wer erfand den Computer?",
+        "answer": "Zuse"
+      },
+      {
+        "id": 10,
+        "text": "Wer erfand das World Wide Web?",
+        "answer": "Berners-Lee"
+      }
+    ],
+    "topAnswers": ["Edison", "edison"],
+    "timeLimit": 30,
+    "trivia": "Edison hielt über 1.000 Patente und war fast taub. Er betrachtete seine Schwerhörigkeit als Vorteil, da sie ihm half, sich besser zu konzentrieren."
+  },
+  {
+    "id": "q8",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welcher Fußballverein gewann am häufigsten die Champions League?",
+        "answer": "Real Madrid"
+      },
+      {
+        "id": 2,
+        "text": "Welche Sportart wird im Wimbledon gespielt?",
+        "answer": "Tennis"
+      },
+      {
+        "id": 3,
+        "text": "Bei welchem Sport gibt es einen Aufschlag?",
+        "answer": "Tennis"
+      },
+      {
+        "id": 4,
+        "text": "Welchen Sport spielte Boris Becker?",
+        "answer": "Tennis"
+      },
+      {
+        "id": 5,
+        "text": "In welcher Stadt ist der FC Bayern?",
+        "answer": "München"
+      },
+      {
+        "id": 6,
+        "text": "Welchen Sport spielte Steffi Graf?",
+        "answer": "Tennis"
+      },
+      {
+        "id": 7,
+        "text": "Welche Sportart nutzt einen Schläger und gelbe Bälle?",
+        "answer": "Tennis"
+      },
+      {
+        "id": 8,
+        "text": "Welcher Sport wird in Flushing Meadows gespielt?",
+        "answer": "Tennis"
+      },
+      {
+        "id": 9,
+        "text": "Welche Sportart wird im Wasser gespielt?",
+        "answer": "Wasserball"
+      },
+      {
+        "id": 10,
+        "text": "Bei welchem Sport gibt es Elfmeter?",
+        "answer": "Fußball"
+      }
+    ],
+    "topAnswers": ["Tennis", "tennis"],
+    "timeLimit": 30,
+    "trivia": "Tennis hat seinen Ursprung im 12. Jahrhundert in französischen Klöstern. Der Name kommt vom französischen Wort 'tenez' (haltet), das die Spieler beim Aufschlag riefen."
+  },
+  {
+    "id": "q9",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Wer schrieb 'Faust'?",
+        "answer": "Goethe"
+      },
+      {
+        "id": 2,
+        "text": "Wer verfasste 'Die Leiden des jungen Werther'?",
+        "answer": "Goethe"
+      },
+      {
+        "id": 3,
+        "text": "Wer schrieb 'Der Zauberlehrling'?",
+        "answer": "Goethe"
+      },
+      {
+        "id": 4,
+        "text": "Wer schrieb 'Die Verwandlung'?",
+        "answer": "Kafka"
+      },
+      {
+        "id": 5,
+        "text": "Wer war der Dichter des 'Erlkönig'?",
+        "answer": "Goethe"
+      },
+      {
+        "id": 6,
+        "text": "Wer schrieb 'Nathan der Weise'?",
+        "answer": "Lessing"
+      },
+      {
+        "id": 7,
+        "text": "Wer verfasste 'Iphigenie auf Tauris'?",
+        "answer": "Goethe"
+      },
+      {
+        "id": 8,
+        "text": "Wer schrieb 'Die Räuber'?",
+        "answer": "Schiller"
+      },
+      {
+        "id": 9,
+        "text": "Wer schrieb 'Effi Briest'?",
+        "answer": "Fontane"
+      },
+      {
+        "id": 10,
+        "text": "Wer verfasste 'Der Prozess'?",
+        "answer": "Kafka"
+      }
+    ],
+    "topAnswers": ["Goethe", "goethe"],
+    "timeLimit": 30,
+    "trivia": "Goethe war nicht nur Dichter, sondern auch Naturwissenschaftler. Er entdeckte den Zwischenkieferknochen beim Menschen und entwickelte eine eigene Farbenlehre."
+  },
+  {
+    "id": "q0",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Welches Metall ist flüssig bei Raumtemperatur?",
+        "answer": "Quecksilber"
+      },
+      {
+        "id": 2,
+        "text": "Was ist das chemische Symbol für Gold?",
+        "answer": "Au"
+      },
+      {
+        "id": 3,
+        "text": "Welches Element ist ein Edelgas?",
+        "answer": "Helium"
+      },
+      {
+        "id": 4,
+        "text": "Was ist das häufigste Metall in der Erdkruste?",
+        "answer": "Aluminium"
+      },
+      {
+        "id": 5,
+        "text": "Welches Metall rostet nicht?",
+        "answer": "Aluminium"
+      },
+      {
+        "id": 6,
+        "text": "Woraus werden die meisten Getränkedosen hergestellt?",
+        "answer": "Aluminium"
+      },
+      {
+        "id": 7,
+        "text": "Welches Metall ist am leichtesten?",
+        "answer": "Lithium"
+      },
+      {
+        "id": 8,
+        "text": "Welches Metall wird für Flugzeuge verwendet?",
+        "answer": "Aluminium"
+      },
+      {
+        "id": 9,
+        "text": "Was ist das chemische Symbol für Silber?",
+        "answer": "Ag"
+      },
+      {
+        "id": 10,
+        "text": "Welches Metall wird für Alufolie verwendet?",
+        "answer": "Aluminium"
+      }
+    ],
+    "topAnswers": ["Aluminium", "aluminium"],
+    "timeLimit": 30,
+    "trivia": "Aluminium war im 19. Jahrhundert wertvoller als Gold. Napoleon III. servierte seinen wichtigsten Gästen mit Aluminium-Besteck, während weniger wichtige Gäste Gold-Besteck bekamen."
+  }
+]

@@ -131,9 +131,11 @@ export default function GameShell({ game }: { game: GameRound[] }) {
             Finde die Antwort, die am häufigsten vorkommt. Du hast{" "}
             <strong>{question.timeLimit} Sekunden</strong> Zeit!
           </p>
-          <p className="text-sm font-semibold text-muted-foreground">
-            Runde {currentRound + 2} von {question.questions.length}
-          </p>
+          {currentRound >= 0 && (
+            <p className="text-sm font-semibold text-muted-foreground">
+              Runde {currentRound + 1} von {question.questions.length}
+            </p>
+          )}
         </div>
 
         <Timer

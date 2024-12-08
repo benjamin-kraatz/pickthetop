@@ -61,6 +61,10 @@ export default function GameShell({
             Du hast alle Fragen beantwortet. Du kannst das Spiel jetzt wieder
             starten.
           </p>
+          <div className="h-8" />
+          <Button type="button" onClick={() => router.push("/")}>
+            Zur Startseite
+          </Button>
         </div>
       </main>
     );
@@ -149,7 +153,9 @@ export default function GameShell({
       toast.success("Glückwunsch! Du hast alle Runden geschafft!");
 
       setHasWon(true);
-      completeRoundMutator.mutate({ roundId });
+      setTimeout(() => {
+        completeRoundMutator.mutate({ roundId });
+      }, 1200);
 
       router.push("/");
       setTimeout(() => {

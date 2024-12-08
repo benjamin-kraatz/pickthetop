@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import GameShell from "~/components/game/GameShell";
 import { api } from "~/trpc/server";
 
@@ -17,17 +18,7 @@ export default async function GamePage() {
   });
 
   if (gameRounds.length === 0) {
-    return (
-      <main className="container space-y-8 py-6">
-        <div className="mx-auto max-w-2xl space-y-8">
-          <h1 className="text-2xl font-bold">Keine Fragen mehr!</h1>
-          <p className="text-muted-foreground">
-            Du hast das Spiel erfolgreich beendet!{" "}
-            <strong>Vielen Dank für&apos;s Mitspielen!</strong>
-          </p>
-        </div>
-      </main>
-    );
+    return redirect("/game/end");
   }
 
   return (

@@ -196,6 +196,15 @@ export default function GameShell({ game }: { game: GameRound[] }) {
               showAnswers
               topAnswers={question.topAnswers}
             />
+
+            {question.trivia && (
+              <div className="mt-4 space-y-1 rounded-lg border bg-primary/5 p-4 text-primary">
+                <p className="text-sm font-bold">Spannende Fakten</p>
+                <p className="leading-5 tracking-tight text-foreground">
+                  {question.trivia}
+                </p>
+              </div>
+            )}
           </div>
         ) : (
           ((!isPlaying || isPaused) && (

@@ -71,6 +71,13 @@ export default function GameShell({
       className: "bg-orange-600 text-white",
     });
     setHasLost(true);
+    // time left, resets the game state round.
+    void answerMutator.mutateAsync({
+      roundId,
+      questionId: question.id,
+      state: "incorrect",
+      timeLeft: 0,
+    });
     resetGame();
     router.push("/game/end");
   };

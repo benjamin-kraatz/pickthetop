@@ -4,7 +4,7 @@ import { buttonVariants } from "~/components/ui/button";
 
 export default function GameEndPage() {
   return (
-    <div className="flex min-h-screen w-screen items-center justify-center">
+    <div className="flex min-h-screen w-screen flex-col items-center justify-center">
       <div className="text-center text-3xl font-medium">
         Das Spiel ist vorbei!
       </div>

@@ -202,13 +202,13 @@ export default function RulesPage() {
             Antworten ist nicht entscheidend. Du kannst die Antwort in
             beliebiger Groß- und Kleinschreibung eingeben. Zum Beispiel sind
             &quot;berlin&quot;, &quot;Berlin&quot; und &quot;BERLIN&quot; alle
-            gültige Eingaben für die Hauptstadt von Deutschland.
+            gültige Eingaben für eine mögliche Top-Antwort.
           </li>
           <li>
             <strong>Artikel und Zahlen:</strong> Artikel wie &quot;der&quot;,
             &quot;die&quot; oder &quot;das&quot; können weggelassen werden. Wenn
-            die Frage nach einer Zahl fragt, kannst du die Antwort sowohl als
-            Zahl (z.B. &quot;5&quot;) als auch als Wort (z.B. &quot;fünf&quot;)
+            die Top-Antwort eine Zahl ist, kannst du die Antwort sowohl als Zahl
+            (z.B. &quot;5&quot;) als auch als Wort (z.B. &quot;fünf&quot;)
             eingeben.
           </li>
         </ul>

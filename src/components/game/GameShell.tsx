@@ -13,6 +13,7 @@ import { Input } from "~/components/ui/input";
 import { type GameRound } from "~/lib/game-types";
 import { validateAnswer } from "~/lib/quiz/answers";
 import { useQuizStore } from "~/lib/quiz/store";
+import { parseRoundId } from "~/lib/quiz/utils";
 import { api } from "~/trpc/react";
 
 export default function GameShell({
@@ -178,13 +179,17 @@ export default function GameShell({
       <div className="mx-auto max-w-2xl space-y-8">
         <div className="space-y-4">
           <h1 className="text-2xl font-bold">Finde die Top-Antwort!</h1>
+          <span className="text-xl font-medium">
+            Spielrunde {parseRoundId(roundId)}
+          </span>
           <p className="text-muted-foreground">
             Finde die Antwort, die am häufigsten vorkommt. Du hast{" "}
             <strong>{question.timeLimit} Sekunden</strong> Zeit!
           </p>
           {currentRound >= 0 && (
             <p className="text-sm font-semibold text-muted-foreground">
-              Runde {currentRound + 1} von {question.questions.length}
+              Runde {currentRound + 1} von {question.questions.length} (
+              {JSON.stringify(question.questions)})
             </p>
           )}
         </div>

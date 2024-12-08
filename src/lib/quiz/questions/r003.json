@@ -509,58 +509,56 @@
   {
     "id": "q10",
     "questions": [
-      [
-        {
-          "id": 1,
-          "text": "Was ist der höchste Berg der Welt?",
-          "answer": "Mount Everest"
-        },
-        {
-          "id": 2,
-          "text": "Der Vorname des kleinen Jungen aus 'Lönneberga'?",
-          "answer": "Michel"
-        },
-        {
-          "id": 3,
-          "text": "Wer schrieb „Der Herr der Ringe“?",
-          "answer": "J.R.R. Tolkien"
-        },
-        {
-          "id": 4,
-          "text": "Welches Land ist bekannt für die Stadt Tokio?",
-          "answer": "Japan"
-        },
-        {
-          "id": 5,
-          "text": "Was ist die Hauptstadt von Frankreich?",
-          "answer": "Paris"
-        },
-        {
-          "id": 6,
-          "text": "Wie heißt der berühmte Maler, der die „Sixtinische Kapelle“ malte?",
-          "answer": "Michel(angelo)"
-        },
-        {
-          "id": 7,
-          "text": "Welcher Kontinent hat die größte Fläche?",
-          "answer": "Asien"
-        },
-        {
-          "id": 8,
-          "text": "Welcher Planet ist der größte im Sonnensystem?",
-          "answer": "Jupiter"
-        },
-        {
-          "id": 9,
-          "text": "Was ist der chemische Hauptbestandteil von Luft?",
-          "answer": "Stickstoff"
-        },
-        {
-          "id": 10,
-          "text": "Welcher Fluss fließt durch London?",
-          "answer": "Themse"
-        }
-      ]
+      {
+        "id": 1,
+        "text": "Was ist der höchste Berg der Welt?",
+        "answer": "Mount Everest"
+      },
+      {
+        "id": 2,
+        "text": "Der Vorname des kleinen Jungen aus 'Lönneberga'?",
+        "answer": "Michel"
+      },
+      {
+        "id": 3,
+        "text": "Wer schrieb „Der Herr der Ringe“?",
+        "answer": "J.R.R. Tolkien"
+      },
+      {
+        "id": 4,
+        "text": "Welches Land ist bekannt für die Stadt Tokio?",
+        "answer": "Japan"
+      },
+      {
+        "id": 5,
+        "text": "Was ist die Hauptstadt von Frankreich?",
+        "answer": "Paris"
+      },
+      {
+        "id": 6,
+        "text": "Wie heißt der berühmte Maler, der die „Sixtinische Kapelle“ malte?",
+        "answer": "Michel(angelo)"
+      },
+      {
+        "id": 7,
+        "text": "Welcher Kontinent hat die größte Fläche?",
+        "answer": "Asien"
+      },
+      {
+        "id": 8,
+        "text": "Welcher Planet ist der größte im Sonnensystem?",
+        "answer": "Jupiter"
+      },
+      {
+        "id": 9,
+        "text": "Was ist der chemische Hauptbestandteil von Luft?",
+        "answer": "Stickstoff"
+      },
+      {
+        "id": 10,
+        "text": "Welcher Fluss fließt durch London?",
+        "answer": "Themse"
+      }
     ],
     "topAnswers": ["Michel", "michel"],
     "timeLimit": 30,

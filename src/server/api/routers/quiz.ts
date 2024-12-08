@@ -1,6 +1,7 @@
 import { eq, sql } from "drizzle-orm";
 import { z } from "zod";
 import { getQuestions } from "~/lib/quiz/questions/actions";
+import { getNextRoundId } from "~/lib/quiz/utils";
 
 import { createTRPCRouter, protectedProcedure } from "~/server/api/trpc";
 import { gameStates, quizAnswers } from "~/server/db/schema";
@@ -100,9 +101,3 @@ export const quizRouter = createTRPCRouter({
     return gameState;
   }),
 });
-
-function getNextRoundId(current: string) {
-  const parsedIt = current.replace("r", "");
-  const nextIt = parseInt(parsedIt) + 1;
-  return `r${nextIt.toString().padStart(3, "0")}`;
-}

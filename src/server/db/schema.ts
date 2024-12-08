@@ -1,8 +1,10 @@
-import { sql } from "drizzle-orm";
+import { relations, sql } from "drizzle-orm";
 import {
   boolean,
+  pgEnum,
   pgTableCreator,
   timestamp,
+  uniqueIndex,
   varchar,
 } from "drizzle-orm/pg-core";
 
@@ -13,6 +15,11 @@ import {
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
 export const createTable = pgTableCreator((name) => `ptt_${name}`);
+
+export const quizAnswerState = pgEnum("quiz_answer_state", [
+  "correct",
+  "incorrect",
+]);
 
 export const users = createTable("user", {
   id: varchar("id", { length: 255 })
@@ -37,3 +44,40 @@ export const users = createTable("user", {
 
   completedSetup: boolean("completed_setup").default(false),
 });
+
+export const usersRelations = relations(users, ({ many }) => ({
+  quizAnswers: many(quizAnswers),
+}));
+
+export const quizAnswers = createTable(
+  "quiz_answer",
+  {
+    id: varchar("id", { length: 255 })
+      .notNull()
+      .primaryKey()
+      .$defaultFn(() => crypto.randomUUID()),
+    timestamp: timestamp("timestamp", {
+      mode: "date",
+      withTimezone: true,
+    }).default(sql`CURRENT_TIMESTAMP`),
+
+    roundId: varchar("round_id", { length: 255 }).notNull(),
+    questionId: varchar("question_id", { length: 255 }).notNull(),
+    state: quizAnswerState("state").notNull(),
+
+    userId: varchar("user_id", { length: 255 })
+      .references(() => users.id)
+      .notNull(),
+  },
+  (tbl) => ({
+    uniq_answer: uniqueIndex("uniq_answer").on(
+      tbl.userId,
+      tbl.roundId,
+      tbl.questionId,
+    ),
+  }),
+);
+
+export const quizAnswersRelations = relations(quizAnswers, ({ one }) => ({
+  user: one(users, { fields: [quizAnswers.userId], references: [users.id] }),
+}));

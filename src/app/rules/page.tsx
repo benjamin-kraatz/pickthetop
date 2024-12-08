@@ -50,67 +50,12 @@ export default function RulesPage() {
           also sei schnell und clever!
         </p>
 
-        <h2 className="mb-4 text-2xl font-semibold">Spielablauf</h2>
-        <ol className="mb-4 list-inside list-decimal space-y-2">
-          <li>
-            <strong>Fragen beantworten:</strong> Du erhältst eine Reihe von
-            Fragen, die dir Hinweise auf die Top-Antwort geben. Jede Frage ist
-            so formuliert, dass sie dich auf die richtige Antwort hinführt, oder
-            sie hat das Ziel, dich aufzuhalten, weil sie eher komplex gestaltet
-            ist.
-          </li>
-          <li>
-            <strong>Top-Antwort finden:</strong> Deine Aufgabe ist es, die
-            Antwort zu finden, die am häufigsten vorkommt. Dabei musst du nicht
-            zwingend jede aufgelistete Frage beantworten; manchmal reicht ein
-            gutes Bauchgefühl oder auch ein bisschen Glück.
-          </li>
-          <li>
-            <strong>Zeitlimit:</strong> Du hast insgesamt 30 Sekunden Zeit, um
-            deine Antworten einzugeben. Die Zeit wird heruntergezählt, und du
-            musst schnell denken und handeln.
-          </li>
-          <li>
-            <strong>Antwort eingeben:</strong> Du kannst deine vermutete
-            Top-Antwort in das Textfeld eingeben. Achte darauf, dass du die
-            Antwort korrekt schreibst, um Punkte zu sammeln.
-          </li>
-          <li>
-            <strong>Runden:</strong> Das Spiel besteht aus mehreren Runden. Jede
-            Runde hat ihre eigenen Fragen, und die Schwierigkeit kann variieren.
-            Du musst in jeder Runde die Top-Antworten finden, um im Spiel zu
-            bleiben.
-          </li>
-        </ol>
-
-        <h2 className="mb-4 text-2xl font-semibold">Wichtige Hinweise</h2>
-        <ul className="mb-4 list-inside list-disc">
-          <li>
-            <strong>Falsche Antworten:</strong> Wenn du eine falsche Antwort
-            eingibst, ist das Spiel sofort vorbei. Du erhältst keine Punkte für
-            falsche Antworten, also überlege gut, bevor du eingibst.
-          </li>
-          <li>
-            <strong>Groß- und Kleinschreibung:</strong> Die Schreibweise der
-            Antworten ist nicht entscheidend. Du kannst die Antwort in
-            beliebiger Groß- und Kleinschreibung eingeben. Zum Beispiel sind
-            &quot;berlin&quot;, &quot;Berlin&quot; und &quot;BERLIN&quot; alle
-            gültige Eingaben für die Hauptstadt von Deutschland.
-          </li>
-          <li>
-            <strong>Artikel und Zahlen:</strong> Artikel wie &quot;der&quot;,
-            &quot;die&quot; oder &quot;das&quot; können weggelassen werden. Wenn
-            die Frage nach einer Zahl fragt, kannst du die Antwort sowohl als
-            Zahl (z.B. &quot;5&quot;) als auch als Wort (z.B. &quot;fünf&quot;)
-            eingeben.
-          </li>
-        </ul>
-
         <h2 className="mb-4 text-2xl font-semibold">
-          Beispiele für Fragen und Antworten
+          Ein Beispiel zur Erklärung
         </h2>
         <p className="mb-4">
-          Hier ist ein Beispiel, um dir zu zeigen, wie das Spiel funktioniert:
+          Am einfachsten ist es, direkt mal loszulegen, um zu sehen, wie das
+          Spiel funktioniert:
         </p>
 
         <Table>
@@ -211,6 +156,62 @@ export default function RulesPage() {
           Möglichkeit, die Antwort als Zahl oder als Wort einzugeben - Sowohl
           Groß- als auch Kleinschreibung ist erlaubt.
         </p>
+
+        <h2 className="mb-4 text-2xl font-semibold">Spielablauf</h2>
+        <ol className="mb-4 list-inside list-decimal space-y-2">
+          <li>
+            <strong>Fragen beantworten:</strong> Du erhältst eine Reihe von
+            Fragen, die dir Hinweise auf die Top-Antwort geben. Jede Frage ist
+            so formuliert, dass sie dich auf die richtige Antwort hinführt, oder
+            sie hat das Ziel, dich aufzuhalten, weil sie eher komplex gestaltet
+            ist.
+          </li>
+          <li>
+            <strong>Top-Antwort finden:</strong> Deine Aufgabe ist es, die
+            Antwort zu finden, die am häufigsten vorkommt. Dabei musst du nicht
+            zwingend jede aufgelistete Frage beantworten; manchmal reicht ein
+            gutes Bauchgefühl oder auch ein bisschen Glück.
+          </li>
+          <li>
+            <strong>Zeitlimit:</strong> Du hast insgesamt 30 Sekunden Zeit, um
+            deine Antworten einzugeben. Die Zeit wird heruntergezählt, und du
+            musst schnell denken und handeln.
+          </li>
+          <li>
+            <strong>Antwort eingeben:</strong> Du kannst deine vermutete
+            Top-Antwort in das Textfeld eingeben. Achte darauf, dass du die
+            Antwort korrekt schreibst, um Punkte zu sammeln.
+          </li>
+          <li>
+            <strong>Runden:</strong> Das Spiel besteht aus mehreren Runden. Jede
+            Runde hat ihre eigenen Fragen, und die Schwierigkeit kann variieren.
+            Du musst in jeder Runde die Top-Antworten finden, um im Spiel zu
+            bleiben.
+          </li>
+        </ol>
+
+        <h2 className="mb-4 text-2xl font-semibold">Wichtige Hinweise</h2>
+        <ul className="mb-4 list-inside list-disc">
+          <li>
+            <strong>Falsche Antworten:</strong> Wenn du eine falsche Antwort
+            eingibst, ist das Spiel sofort vorbei. Du erhältst keine Punkte für
+            falsche Antworten, also überlege gut, bevor du eingibst.
+          </li>
+          <li>
+            <strong>Groß- und Kleinschreibung:</strong> Die Schreibweise der
+            Antworten ist nicht entscheidend. Du kannst die Antwort in
+            beliebiger Groß- und Kleinschreibung eingeben. Zum Beispiel sind
+            &quot;berlin&quot;, &quot;Berlin&quot; und &quot;BERLIN&quot; alle
+            gültige Eingaben für die Hauptstadt von Deutschland.
+          </li>
+          <li>
+            <strong>Artikel und Zahlen:</strong> Artikel wie &quot;der&quot;,
+            &quot;die&quot; oder &quot;das&quot; können weggelassen werden. Wenn
+            die Frage nach einer Zahl fragt, kannst du die Antwort sowohl als
+            Zahl (z.B. &quot;5&quot;) als auch als Wort (z.B. &quot;fünf&quot;)
+            eingeben.
+          </li>
+        </ul>
 
         <div className="h-8" />
 

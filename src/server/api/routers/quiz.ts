@@ -106,6 +106,14 @@ export const quizRouter = createTRPCRouter({
         .set({ lastRoundId: nextRoundId, lastQuestionId: null })
         .where(eq(gameStates.userId, ctx.userId!));
 
+      posthog.capture({
+        event: "quiz_round_completed",
+        distinctId: ctx.userId!,
+        properties: {
+          roundId: input.roundId,
+        },
+      });
+
       revalidatePath("/game");
     }),
 

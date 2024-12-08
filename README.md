@@ -72,9 +72,21 @@ Die Basis dafür bildet der [T3-Stack](https://create.t3.gg/).
 
 ### Backend (Multiplayer-Feature)
 
-_Das Repository zum Backend ist [hier](https://github.com/benjamin-kraatz/pickthetop_backend) zu finden_
+> Das Multiplayer-Feature ist derzeit noch in Arbeit.
 
-- [Phoenix Framework](https://www.phoenixframework.org/)
+## Mitwirken
+
+Wenn du bei der Verbesserung der Seite mithelfen willst, kannst du das Repository [hier](https://github.com/benjamin-kraatz/pickthetop) klonen und die Anleitung unter [Development](#development) befolgen.
+
+Wir freuen uns über jeden Beitrag! Wenn du nicht programmieren willst, kannst du auch einfach [hier ein Issue](https://github.com/benjamin-kraatz/pickthetop/issues) erstellen, wenn du einen Fehler entdeckst oder einen Verbesserungsvorschlag hast.
+
+Hast du ein Erfahrung mit der Programmierung oder Design, mach gerne mit! Am wichtigsten ist derzeit:
+
+- Spielregeln verbessern
+- mehr Runden und Fragen hinzufügen
+- Gestaltung und Flow der Seite verbessern
+
+Danke!
 
 ## Development
 

@@ -6,6 +6,7 @@ import { type Metadata } from "next";
 import { deDE } from "@clerk/localizations";
 import { ClerkProvider, SignedIn, UserButton } from "@clerk/nextjs";
 
+import { Analytics } from "@vercel/analytics/react";
 import { Github } from "lucide-react";
 import Link from "next/link";
 import { Toaster } from "~/components/ui/sonner";
@@ -31,6 +32,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <body>
+          <Analytics />
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"

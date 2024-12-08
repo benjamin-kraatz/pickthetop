@@ -7,7 +7,7 @@ export const quizRouter = createTRPCRouter({
   getQuestions: protectedProcedure
     .input(z.object({ roundId: z.string(), randomize: z.boolean().optional() }))
     .query(async ({ input }) => {
-      const questions = await getQuestions(input.roundId);
+      const questions = await getQuestions(input.roundId, input.randomize);
       return questions;
     }),
 });

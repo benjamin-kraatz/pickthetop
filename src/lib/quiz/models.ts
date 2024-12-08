@@ -12,4 +12,14 @@ export type GameRound = {
   // The validation always tolowercases the input.
   topAnswers: string[];
   timeLimit: number;
+
+  /**
+   * Some trivia about the round,
+   * regarding the top answer.
+   *
+   * For example:
+   * When the top answer is "29", the trivia could be:
+   * "29 is the only number between 1 and 100 that is divisible by 29 (because 29 is a prime number)."
+   */
+  trivia?: string;
 };

@@ -46,7 +46,8 @@
       }
     ],
     "topAnswers": ["7", "sieben"],
-    "timeLimit": 30
+    "timeLimit": 30,
+    "trivia": "Die Zahl 7 ist in vielen Kulturen eine Glückszahl. Gott erschuf die Welt in sieben Tagen, Menora, ein Symbol im Judentum, hat 7 Arme und die 7 steht in der Bibel für Vollkommenheit (sie wird 700 mal erwähnt)."
   },
   {
     "id": "q2",
@@ -99,7 +100,8 @@
       }
     ],
     "topAnswers": ["Mars", "mars"],
-    "timeLimit": 30
+    "timeLimit": 30,
+    "trivia": "Mars ist der vierte Planet von der Sonne aus gesehen. Er ist der zweitkleinste Planet im Sonnensystem und wird auch der 'Rote Planet' genannt, weil seine Oberfläche von dunklen Eisenoxid-Kristallen geprägt ist, die für seinen rostigen Anschein verantwortlich sind."
   },
   {
     "id": "q3",
@@ -156,7 +158,8 @@
       }
     ],
     "topAnswers": ["8", "acht"],
-    "timeLimit": 30
+    "timeLimit": 30,
+    "trivia": "In China hat die Zahl 8 eine sehr positive Bedeutung. Sie steht für Glück, Reichtum und Wohlstand. Ihre Aussprache ist 'ba' und klingt ähnlich zu 'fa', was 'Wohlstand' bedeutet."
   },
   {
     "id": "q4",
@@ -213,7 +216,8 @@
       }
     ],
     "topAnswers": ["no", "No"],
-    "timeLimit": 30
+    "timeLimit": 30,
+    "trivia": "Das deutsche 'nein' kommt aus dem althochdeutschen und ist eine Verkürzung von 'nicht' + 'ein' und bedeutet sowas wie 'nicht so'."
   },
   {
     "id": "q5",
@@ -270,7 +274,8 @@
       }
     ],
     "topAnswers": ["6", "sechs"],
-    "timeLimit": 30
+    "timeLimit": 30,
+    "trivia": "Die Zahl 6 ist die erste \"perfekte\" Zahl. Sie ist die Summe ihrer ersten drei Teiler (1, 2, 3), und die Summe ihrer ersten drei Vielfachen (6, 12, 18) ist ebenfalls 36, was wiederum 6 ist."
   },
   {
     "id": "q6",
@@ -327,7 +332,8 @@
       }
     ],
     "topAnswers": ["gelb", "Gelb"],
-    "timeLimit": 30
+    "timeLimit": 30,
+    "trivia": "Wusstest du, dass das Licht der Sonne eigentlich weiß ist? Es erscheint uns gelblich, weil die Erdatmosphäre die kurzwelligen blauen und violetten Anteile des Lichts aus dem Sonnenlicht herausfiltert - es bleibt also nur das gelbe Licht übrig."
   },
   {
     "id": "q7",
@@ -384,7 +390,8 @@
       }
     ],
     "topAnswers": ["Wasserstoff", "wasserstoff"],
-    "timeLimit": 30
+    "timeLimit": 30,
+    "trivia": "Sehr spannend: die Sterne am Himmel leuchten deshalb, weil eine Kernfusion im Inneren stattfindet. Dabei wird Wasserstoff zu Helium verschmelzt, was eine riesige Energie in Form von Licht und Wärme freisetzt."
   },
   {
     "id": "q8",
@@ -441,7 +448,8 @@
       }
     ],
     "topAnswers": ["Esel", "esel"],
-    "timeLimit": 30
+    "timeLimit": 30,
+    "trivia": "Die \"Sturheit\" des Esels ist eigentlich nur die Vorsicht des Esels, der übrigens \"Afrikanisches Pferd\" im Lateinischen heißt (\"Equus africanus asinus\")."
   },
   {
     "id": "q9",
@@ -498,7 +506,8 @@
       }
     ],
     "topAnswers": ["29", "neunundzwanzig"],
-    "timeLimit": 30
+    "timeLimit": 30,
+    "trivia": "Menschen, die am 29. Februar geboren sind, sind sogenannte \"Schaltjahr-Kinder\" und feiern ihren Geburtstag in den meisten Jahren entweder am 28. Februar oder 1. März. Die Wahrscheinlichkeit, dass du an diesem Tag Geburtstag hast, liegt bei 0,068%"
   },
   {
     "id": "q10",
@@ -555,6 +564,7 @@
       }
     ],
     "topAnswers": ["weiß", "weiss", "Weiß", "Weiss"],
-    "timeLimit": 30
+    "timeLimit": 30,
+    "trivia": "Weiß ist in der Physik die Summe aller Farben und ist daher selbst eigentlich keine Farbe."
   }
 ]

@@ -4,14 +4,14 @@ import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
 import { deDE } from "@clerk/localizations";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, SignedIn, UserButton } from "@clerk/nextjs";
 
-import { ThemeProvider } from "~/components/ui/theme-provider";
-import { TRPCReactProvider } from "~/trpc/react";
-import { Toaster } from "~/components/ui/sonner";
-import Link from "next/link";
-import { ThemeToggle } from "~/components/ui/theme-toggle";
 import { Github } from "lucide-react";
+import Link from "next/link";
+import { Toaster } from "~/components/ui/sonner";
+import { ThemeProvider } from "~/components/ui/theme-provider";
+import { ThemeToggle } from "~/components/ui/theme-toggle";
+import { TRPCReactProvider } from "~/trpc/react";
 
 export const metadata: Metadata = {
   title: "Pick The Top - Das Mindgame",
@@ -53,7 +53,12 @@ export default function RootLayout({
                   <span>GitHub</span>
                 </Link>
               </div>
-              <ThemeToggle />
+              <div className="flex items-center gap-2">
+                <ThemeToggle />
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
+              </div>
             </nav>
             <Toaster richColors position="top-center" />
             <TRPCReactProvider>{children}</TRPCReactProvider>

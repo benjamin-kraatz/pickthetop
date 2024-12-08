@@ -15,6 +15,21 @@ export default async function GamePage() {
     roundId: lastRound,
     randomize: false,
   });
+
+  if (gameRounds.length === 0) {
+    return (
+      <main className="container space-y-8 py-6">
+        <div className="mx-auto max-w-2xl space-y-8">
+          <h1 className="text-2xl font-bold">Keine Fragen mehr!</h1>
+          <p className="text-muted-foreground">
+            Du hast das Spiel erfolgreich beendet!{" "}
+            <strong>Vielen Dank für&apos;s Mitspielen!</strong>
+          </p>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <GameShell
       roundId={lastRound}

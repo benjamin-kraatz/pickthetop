@@ -47,6 +47,7 @@ export default function GameShell({
   const [canPause, setCanPause] = useState(true);
 
   const answerMutator = api.quiz.giveAnswer.useMutation();
+  const completeRoundMutator = api.quiz.completeRound.useMutation();
 
   const question = game[Math.max(currentRound, 0)];
 
@@ -132,7 +133,10 @@ export default function GameShell({
 
     if (currentRound === question.questions.length - 1) {
       toast.success("Glückwunsch! Du hast alle Runden geschafft!");
+
       setHasWon(true);
+      completeRoundMutator.mutate({ roundId });
+
       router.push("/");
       setTimeout(() => {
         resetGame();

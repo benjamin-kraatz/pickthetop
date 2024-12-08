@@ -1,4 +1,4 @@
-import { sql } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 import { z } from "zod";
 import { getQuestions } from "~/lib/quiz/questions/actions";
 
@@ -71,20 +71,26 @@ export const quizRouter = createTRPCRouter({
         // if the answer is incorrect, we delete the last game state's question id
         // for the user, so the user has to start over.
         await ctx.db
-          .insert(gameStates)
-          .values({
-            userId: ctx.userId!,
+          .update(gameStates)
+          .set({
             lastQuestionId: null,
           })
-          .onConflictDoUpdate({
-            target: [gameStates.userId],
-            set: {
-              lastQuestionId: null,
-            },
-          });
+          .where(eq(gameStates.userId, ctx.userId!));
       }
 
       return answer;
+    }),
+
+  completeRound: protectedProcedure
+    .input(z.object({ roundId: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      console.log("completeRound", input);
+      const nextRoundId = getNextRoundId(input.roundId);
+      console.log("nextRoundId", nextRoundId);
+      await ctx.db
+        .update(gameStates)
+        .set({ lastRoundId: nextRoundId, lastQuestionId: null })
+        .where(eq(gameStates.userId, ctx.userId!));
     }),
 
   getCurrentGameState: protectedProcedure.query(async ({ ctx }) => {
@@ -94,3 +100,9 @@ export const quizRouter = createTRPCRouter({
     return gameState;
   }),
 });
+
+function getNextRoundId(current: string) {
+  const parsedIt = current.replace("r", "");
+  const nextIt = parseInt(parsedIt) + 1;
+  return `r${nextIt.toString().padStart(3, "0")}`;
+}

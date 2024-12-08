@@ -190,7 +190,7 @@ export default function GameShell({
   };
 
   return (
-    <main className="container space-y-8 py-6">
+    <main className="container space-y-8 py-6 px-4 md:px-0">
       <div className="mx-auto max-w-2xl space-y-8">
         <div className="space-y-4">
           <h1 className="text-2xl font-bold">Finde die Top-Antwort!</h1>

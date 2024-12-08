@@ -188,8 +188,7 @@ export default function GameShell({
           </p>
           {currentRound >= 0 && (
             <p className="text-sm font-semibold text-muted-foreground">
-              Runde {currentRound + 1} von {question.questions.length} (
-              {JSON.stringify(question.questions)})
+              Runde {currentRound + 1} von {question.questions.length}
             </p>
           )}
         </div>

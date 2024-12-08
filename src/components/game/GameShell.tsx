@@ -1,6 +1,6 @@
 "use client";
 
-import { EyeIcon, EyeOffIcon } from "lucide-react";
+import { EyeIcon, EyeOffIcon, Loader2Icon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { startTransition, useState } from "react";
 import { toast } from "sonner";
@@ -13,29 +13,67 @@ import { Input } from "~/components/ui/input";
 import { validateAnswer } from "~/lib/quiz/answers";
 import { api } from "~/trpc/react";
 
-export default function GameShell({ roundId }: { roundId?: string }) {
+export default function GameShell({ roundId }: { roundId: string }) {
   const router = useRouter();
-  const [currentRound, setCurrentRound] = useState(0);
+  // start at -1 as we increment on pressing "play".
+  const [currentRound, setCurrentRound] = useState(-1);
   const [isPlaying, setIsPlaying] = useState(false);
   const [answer, setAnswer] = useState("");
   const [showingResults, setShowingResults] = useState(false);
   const [lastAnswer, setLastAnswer] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
 
+  const [hasLost, setHasLost] = useState(false);
+
   const [isPaused, setIsPaused] = useState(false);
   const [canPause, setCanPause] = useState(true);
 
-  const { data: round } = api.quiz.getQuestions.useQuery({
-    roundId: roundId ?? "r001",
-  });
+  const { data: gameRound, isLoading } = api.quiz.getQuestions.useQuery(
+    {
+      roundId,
+    },
+    {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+      refetchInterval: false,
+      refetchIntervalInBackground: false,
+    },
+  );
 
-  if (!round) {
+  if (isLoading) {
+    return (
+      <main className="flex h-screen w-screen flex-col items-center justify-center gap-4">
+        <Loader2Icon className="h-6 w-6 animate-spin" />
+        <p className="text-muted-foreground">
+          Die Runden werden geladen. Bitte warte einen Moment.
+        </p>
+      </main>
+    );
+  }
+
+  if (!gameRound) {
     return (
       <main className="container space-y-8 py-6">
         <div className="mx-auto max-w-2xl space-y-8">
           <h1 className="text-2xl font-bold">Keine Runden mehr!</h1>
           <p className="text-muted-foreground">
-            Du hast alle Runden beendet. Du kannst das Spiel jetzt wieder
+            Du hast alle Runden beendet. Glückwunsch!
+          </p>
+        </div>
+      </main>
+    );
+  }
+
+  const question = gameRound[Math.max(currentRound, 0)];
+
+  if (!question) {
+    return (
+      <main className="container space-y-8 py-6">
+        <div className="mx-auto max-w-2xl space-y-8">
+          <h1 className="text-2xl font-bold">Keine Fragen mehr!</h1>
+          <p className="text-muted-foreground">
+            Du hast alle Fragen beantwortet. Du kannst das Spiel jetzt wieder
             starten.
           </p>
         </div>
@@ -45,9 +83,10 @@ export default function GameShell({ roundId }: { roundId?: string }) {
 
   const handleTimeUp = () => {
     toast.error("Zeit abgelaufen!", {
-      description: `Die richtige Antwort wäre "${round.topAnswers[0]!}" gewesen.`,
+      description: `Die richtige Antwort wäre "${question.topAnswers[0]!}" gewesen.`,
       className: "bg-orange-600 text-white",
     });
+    setHasLost(true);
     resetGame();
     router.push("/game/end");
   };
@@ -61,6 +100,10 @@ export default function GameShell({ roundId }: { roundId?: string }) {
   };
 
   const startGame = () => {
+    // increment the round as we start the game or go to the next round.
+    // this is necessary so we don't show the next question in the answer submit function
+    // (where incrementing would make more sense).
+    setCurrentRound((prev) => prev + 1);
     setShowingResults(false);
     setIsPlaying(true);
     setIsPaused(false);
@@ -72,7 +115,7 @@ export default function GameShell({ roundId }: { roundId?: string }) {
   };
 
   const handleAnswerSubmit = (answer: string) => {
-    const correct = validateAnswer(answer, round);
+    const correct = validateAnswer(answer, question);
 
     setLastAnswer(answer);
     setIsCorrect(correct);
@@ -83,6 +126,7 @@ export default function GameShell({ roundId }: { roundId?: string }) {
       toast.error("Das war leider falsch!", {
         description: "Das Spiel ist vorbei. Du kannst von vorne starten",
       });
+      setHasLost(true);
       setTimeout(() => {
         resetGame();
         router.refresh();
@@ -90,12 +134,11 @@ export default function GameShell({ roundId }: { roundId?: string }) {
       return;
     }
 
-    if (currentRound === round.questions.length - 1) {
+    if (currentRound === question.questions.length - 1) {
       toast.success("Glückwunsch! Du hast alle Runden geschafft!");
       router.push("/");
       return;
     }
-    setCurrentRound((prev) => prev + 1);
   };
 
   const resetGame = () => {
@@ -117,15 +160,15 @@ export default function GameShell({ roundId }: { roundId?: string }) {
           <h1 className="text-2xl font-bold">Finde die Top-Antwort!</h1>
           <p className="text-muted-foreground">
             Finde die Antwort, die am häufigsten vorkommt. Du hast{" "}
-            {round.timeLimit} Sekunden Zeit!
+            {question.timeLimit} Sekunden Zeit!
           </p>
           <p className="text-sm font-semibold text-muted-foreground">
-            Runde {currentRound + 1} von {round.questions.length}
+            Runde {currentRound + 2} von {question.questions.length}
           </p>
         </div>
 
         <Timer
-          timeLimit={round.timeLimit}
+          timeLimit={question.timeLimit}
           onTimeUp={handleTimeUp}
           isActive={isPlaying}
           isPaused={isPaused}
@@ -165,7 +208,7 @@ export default function GameShell({ roundId }: { roundId?: string }) {
                   Richtige Antworten:
                 </span>
                 <div className="flex gap-2">
-                  {round.topAnswers.map((answer) => (
+                  {question.topAnswers.map((answer) => (
                     <span
                       key={answer}
                       className="rounded bg-green-100 px-2 py-0.5 font-medium text-green-700"
@@ -178,9 +221,9 @@ export default function GameShell({ roundId }: { roundId?: string }) {
             )}
 
             <QuestionsTable
-              questions={round.questions}
+              questions={question.questions}
               showAnswers
-              topAnswers={round.topAnswers}
+              topAnswers={question.topAnswers}
             />
           </div>
         ) : (
@@ -192,7 +235,7 @@ export default function GameShell({ roundId }: { roundId?: string }) {
                   : "Timer pausiert. Klicke auf das Auge, um die Fragen wieder zu sehen."}
               </span>
             </div>
-          )) || <QuestionsTable questions={round.questions} />
+          )) || <QuestionsTable questions={question.questions} />
         )}
 
         {isPlaying && (
@@ -238,8 +281,9 @@ export default function GameShell({ roundId }: { roundId?: string }) {
             onClick={startGame}
             className="w-full"
             variant="outline"
+            disabled={hasLost}
           >
-            {currentRound === 0 ? "Spiel starten" : "Nächste Runde"}
+            {currentRound <= 1 ? "Spiel starten" : "Nächste Runde"}
           </Button>
         )}
         {showingResults && !isPaused && !isPlaying && (
@@ -248,6 +292,7 @@ export default function GameShell({ roundId }: { roundId?: string }) {
             onClick={startGame}
             className="w-full"
             variant="outline"
+            disabled={hasLost}
           >
             Weiter zur nächste Runde
           </Button>

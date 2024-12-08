@@ -10,6 +10,7 @@ import {
 } from "~/components/ui/card";
 import Form from "./_components/Form";
 import Username from "./_components/Username";
+import Link from "next/link";
 
 export default function SetupPage() {
   return (
@@ -19,7 +20,7 @@ export default function SetupPage() {
           Herzlich Willkommen!
         </CardTitle>
       </CardHeader>
-      <CardContent className="scrollbar max-h-[500px] max-w-[420px] overflow-y-auto">
+      <CardContent className="scrollbar max-h-[500px] max-w-[450px] overflow-y-auto">
         <div className="font-semibold">
           Schön, dass du da bist,{" "}
           <Suspense
@@ -33,22 +34,23 @@ export default function SetupPage() {
         </div>
         <br />
         <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, quam
-          eos, praesentium quae aspernatur laboriosam beatae ad eum deserunt
-          amet debitis?
+          Schau dir die Anleitung an, um zu verstehen, wie das Spiel
+          funktioniert.
         </div>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit earum
-          a dolorem doloribus laborum. Accusamus delectus, recusandae velit
-          cupiditate corrupti nostrum, a quidem rerum dolor eaque tempore
-          eveniet cumque ut assumenda nobis distinctio inventore culpa quaerat!
-          Quidem labore ullam aliquid sequi?
+        <div>Oder du kannst gleich loslegen und das Spiel spielen.</div>
+        <div className="mt-4">
+          Schau&apos; doch auch mal bei{" "}
+          <Link
+            href="https://github.com/benjamin-kraatz/pickthetop"
+            className="underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </Link>{" "}
+          vorbei.
         </div>
-        <div>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi
-          consequuntur quis pariatur facilis vel, sunt distinctio debitis
-          sapiente voluptatum voluptate, veniam architecto quam facere?
-        </div>
+        <div className="mt-8 font-bold">Viel Spaß!</div>
       </CardContent>
       <CardFooter className="flex flex-row items-center justify-end gap-1 border-t border-t-secondary py-4">
         <Suspense fallback={<Button disabled>Anleitung ansehen</Button>}>

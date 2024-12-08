@@ -45,24 +45,6 @@ describe("Game Logic", () => {
   });
 
   describe("Answer Frequency Analysis", () => {
-    const findTopAnswers = (round: GameRound): string[] => {
-      const answerCount = new Map<string, number>();
-
-      // Count occurrences of each answer
-      round.questions.forEach((question) => {
-        const answer = question.answer.toLowerCase().trim();
-        answerCount.set(answer, (answerCount.get(answer) ?? 0) + 1);
-      });
-
-      // Find the maximum frequency
-      const maxCount = Math.max(...Array.from(answerCount.values()));
-
-      // Return all answers that appear with maximum frequency
-      return Array.from(answerCount.entries())
-        .filter(([_, count]) => count === maxCount)
-        .map(([answer]) => answer);
-    };
-
     test("should identify most frequent answers", () => {
       const topAnswers = findTopAnswers(mockRound);
       expect(topAnswers).toContain("katze");
@@ -89,4 +71,54 @@ describe("Game Logic", () => {
       expect(topAnswers.length).toBe(2);
     });
   });
+
+  describe("Additional Answer Validation Tests", () => {
+    const additionalMockRound: GameRound = {
+      id: "2",
+      topAnswers: ["Katze", "Hund"],
+      timeLimit: 30,
+      questions: [
+        { id: 1, text: "Was ist ein beliebtes Haustier?", answer: "Katze" },
+        { id: 2, text: "Welches Tier ist treu?", answer: "Hund" },
+        { id: 3, text: "Was fängt Mäuse?", answer: "Katze" },
+      ],
+    };
+
+    test("should accept answers with mixed case and whitespace", () => {
+      expect(validateAnswer("  Katze  ", additionalMockRound)).toBe(true);
+      expect(validateAnswer("  HuNd  ", additionalMockRound)).toBe(true);
+    });
+
+    test("should reject answers not in the questions", () => {
+      expect(validateAnswer("Fisch", additionalMockRound)).toBe(false);
+      expect(validateAnswer("Katze und Hund", additionalMockRound)).toBe(false);
+    });
+
+    test("should reject empty answers", () => {
+      expect(validateAnswer("", additionalMockRound)).toBe(false);
+    });
+
+    test("should reject answers with special characters", () => {
+      expect(validateAnswer("Katze!", additionalMockRound)).toBe(false);
+      expect(validateAnswer("Hund?", additionalMockRound)).toBe(false);
+    });
+  });
 });
+
+const findTopAnswers = (round: GameRound): string[] => {
+  const answerCount = new Map<string, number>();
+
+  // Count occurrences of each answer
+  round.questions.forEach((question) => {
+    const answer = question.answer.toLowerCase().trim();
+    answerCount.set(answer, (answerCount.get(answer) ?? 0) + 1);
+  });
+
+  // Find the maximum frequency
+  const maxCount = Math.max(...Array.from(answerCount.values()));
+
+  // Return all answers that appear with maximum frequency
+  return Array.from(answerCount.entries())
+    .filter(([_, count]) => count === maxCount)
+    .map(([answer]) => answer);
+};

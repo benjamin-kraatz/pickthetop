@@ -144,7 +144,7 @@ export default function GameShell({
 
   const resetGame = () => {
     startTransition(() => {
-      setCurrentRound(0);
+      setCurrentRound(-1);
       setIsPlaying(false);
       setShowingResults(false);
       setIsPaused(false);

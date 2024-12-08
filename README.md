@@ -80,7 +80,7 @@ Wenn du bei der Verbesserung der Seite mithelfen willst, kannst du das Repositor
 
 Wir freuen uns über jeden Beitrag! Wenn du nicht programmieren willst, kannst du auch einfach [hier ein Issue](https://github.com/benjamin-kraatz/pickthetop/issues) erstellen, wenn du einen Fehler entdeckst oder einen Verbesserungsvorschlag hast.
 
-Hast du ein Erfahrung mit der Programmierung oder Design, mach gerne mit! Am wichtigsten ist derzeit:
+Hast du Erfahrung mit Programmierung oder Design, mach gerne mit! Am wichtigsten ist derzeit:
 
 - Spielregeln verbessern
 - mehr Runden und Fragen hinzufügen

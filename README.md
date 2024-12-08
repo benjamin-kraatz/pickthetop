@@ -86,6 +86,8 @@ Hast du Erfahrung mit Programmierung oder Design, mach gerne mit! Am wichtigsten
 - mehr Runden und Fragen hinzufügen
 - Gestaltung und Flow der Seite verbessern
 
+Schicke uns einfach einen [Pull Request](https://github.com/benjamin-kraatz/pickthetop/pulls) mit deinen Änderungen.
+
 Danke!
 
 ## Development

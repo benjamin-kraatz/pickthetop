@@ -34,7 +34,7 @@ export default function RulesPage() {
               className="underline"
               rel="noreferrer noopener"
             >
-              hilf doch mit
+              Hilf doch mit
             </Link>{" "}
             und verbessere diese Seite für alle anderen Spieler.
           </AlertDescription>
@@ -227,6 +227,8 @@ export default function RulesPage() {
           entmutigen, wenn du nicht sofort die richtige Antwort findest. Übung
           macht den Meister!
         </p>
+
+        <div className="h-4" />
       </div>
     </div>
   );
